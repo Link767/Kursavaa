@@ -62,5 +62,20 @@ namespace Kursavaa.WinFolder
             users.Show();
             this.Close();
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Программу создал ученик группы:\n Д-03-3ИСП21\nКаралис Александр Александрович.");
+        }
+
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Это информационная система для учете заказов ООО Ваилдбириз");
+        }
+
+        private void PolzovatelRuk(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

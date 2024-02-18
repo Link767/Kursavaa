@@ -56,14 +56,50 @@
                     <MenuItem
                     Header="КЛИЕНТЫ" Click="User"/>
                 </MenuItem>
-                
+
                 <MenuItem
-                Header="Руководство пользователя" />
+                Header="Руководство пользователя" Click="PolzovatelRuk" />
                 <MenuItem
-                Header="Информация о программе" />
+                Header="Информация о программе" Click="MenuItem_Click_1" />
                 <MenuItem
-                Header="О Разработчике" />
+                Header="О Разработчике" Click="MenuItem_Click" />
             </Menu>
         </materialDesign:Card>
+
+        <Grid Grid.Row="5" Grid.Column="6">
+
+            <Grid.Resources>
+                <Style
+      x:Key="CustomCalendarDayButton"
+      TargetType="CalendarDayButton"
+      BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
+                    <Setter
+        Property="materialDesign:CalendarAssist.SelectionColor"
+        Value="#B2F39B" />
+                    <Setter
+        Property="materialDesign:CalendarAssist.SelectionForegroundColor"
+        Value="Black" />
+                </Style>
+                <Style
+      x:Key="CustomCalendarButton"
+      TargetType="CalendarButton"
+      BasedOn="{StaticResource MaterialDesignCalendarButton}">
+                    <Setter
+        Property="materialDesign:CalendarAssist.SelectionColor"
+        Value="#B2F39B" />
+                    <Setter
+        Property="materialDesign:CalendarAssist.SelectionForegroundColor"
+        Value="Black" />
+                </Style>
+            </Grid.Resources>
+            <Calendar
+    materialDesign:CalendarAssist.HeaderBackground="#A2E9FF"
+    materialDesign:CalendarAssist.HeaderForeground="Black"
+    Background="#343C3F"
+    CalendarButtonStyle="{StaticResource CustomCalendarButton}"
+    CalendarDayButtonStyle="{StaticResource CustomCalendarDayButton}"
+    Foreground="White" />
+        </Grid>
+
     </Grid>
 </Window>
