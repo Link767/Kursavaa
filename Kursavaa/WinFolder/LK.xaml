@@ -38,7 +38,8 @@
         <materialDesign:Card Grid.Row="4" Grid.Column="1" 
                              Margin="0,0,0,91" Grid.ColumnSpan="6">
             <Menu
-                materialDesign:MenuAssist.TopLevelMenuItemHeight="{Binding RelativeSource={RelativeSource FindAncestor,
+                materialDesign:MenuAssist.TopLevelMenuItemHeight=
+                "{Binding RelativeSource={RelativeSource FindAncestor,
                 AncestorType={x:Type materialDesign:Card}}, Path=ActualHeight}">
                 <MenuItem
                 Header="File">
@@ -65,38 +66,8 @@
             </Menu>
         </materialDesign:Card>
 
-        <Grid Grid.Row="5" Grid.Column="6">
-            <Grid.Resources>
-                <Style
-                    x:Key="CustomCalendarDayButton"
-                    TargetType="CalendarDayButton"
-                    BasedOn="{StaticResource MaterialDesignCalendarDayButton}">
-                    <Setter
-                        Property="materialDesign:CalendarAssist.SelectionColor"
-                        Value="#B2F39B" />
-                    <Setter
-                        Property="materialDesign:CalendarAssist.SelectionForegroundColor"
-                        Value="Black" />
-                </Style>
-                <Style
-                     x:Key="CustomCalendarButton"
-                     TargetType="CalendarButton"
-                    BasedOn="{StaticResource MaterialDesignCalendarButton}">
-                    <Setter
-                        Property="materialDesign:CalendarAssist.SelectionColor"
-                        Value="#B2F39B" />
-                    <Setter
-                        Property="materialDesign:CalendarAssist.SelectionForegroundColor"
-                        Value="Black" />
-                </Style>
-            </Grid.Resources>
-            <Calendar
-                materialDesign:CalendarAssist.HeaderBackground="#A2E9FF"
-                materialDesign:CalendarAssist.HeaderForeground="Black"
-                Background="#343C3F"
-                CalendarButtonStyle="{StaticResource CustomCalendarButton}"
-                CalendarDayButtonStyle="{StaticResource CustomCalendarDayButton}"
-                Foreground="White" />
-        </Grid>
+        <Calendar Grid.Row="5" Grid.Column="5"
+                  materialDesign:CalendarAssist.Orientation="Horizontal" 
+                  Grid.ColumnSpan="2" Grid.RowSpan="2" />
     </Grid>
 </Window>
