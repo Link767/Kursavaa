@@ -33,7 +33,45 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        
-        
+
+        <Rectangle RadiusX="50" RadiusY="50"
+                   Grid.Row="4" Grid.Column="1"
+        Opacity="0.7" 
+        VerticalAlignment="Center" HorizontalAlignment="Left" 
+        Width="473" Height="780" 
+        Fill="#FC2847" Grid.ColumnSpan="2" Grid.RowSpan="6"/>
+
+        <Rectangle RadiusX="50" RadiusY="50"
+             Grid.Row="4" Grid.Column="5"
+             Opacity="0.7" 
+             VerticalAlignment="Center" HorizontalAlignment="Left" 
+             Width="463" Height="780" 
+             Fill="#FC2847" Grid.RowSpan="6" Grid.ColumnSpan="2"/>
+
+
+        <TextBlock Grid.Row="4" Grid.Column="1"
+            Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+            Text="О разработчике" Grid.ColumnSpan="2" Margin="80,28,130,52" />
+
+        <TextBlock Grid.Row="4" Grid.Column="5"
+            Style="{StaticResource MaterialDesignHeadline4TextBlock}"
+            Text="О программе" Margin="125,28,135,44" Grid.ColumnSpan="2" />
+
+        <TextBlock Grid.Row="8" Grid.Column="1"
+                   Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                   Grid.ColumnSpan="2" Margin="18,2,69,43" TextWrapping="Wrap">
+                   Каралис Алесандр Александрович
+                   Учиник группы Д-03-3ИСП21
+        </TextBlock>
+        <TextBlock Grid.Row="8" Grid.Column="1"
+                   Text="Номер: +7(985)-291-61-81" FontSize="20" 
+                   
+                   Grid.ColumnSpan="2" Margin="43,65,183,30"/>
+
+        <Image Grid.Row="5"
+                Source="C:\Users\Студент\Source\Repos\Kursavaa\Kursavaa\Image\msg981036250-244963.jpg" 
+               Margin="-47,5,231,5" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
+
+
     </Grid>
 </Window>

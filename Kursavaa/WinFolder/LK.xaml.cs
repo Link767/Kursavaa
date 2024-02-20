@@ -70,7 +70,9 @@ namespace Kursavaa.WinFolder
 
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Это информационная система для учете заказов ООО Ваилдбириз");
+            OPo oPo = new OPo();
+            oPo.Show();
+            this.Close();
         }
 
         private void PolzovatelRuk(object sender, RoutedEventArgs e)
