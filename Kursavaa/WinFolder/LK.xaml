@@ -61,8 +61,6 @@
                 Header="Руководство пользователя" Click="PolzovatelRuk" />
                 <MenuItem
                 Header="Информация о программе" Click="MenuItem_Click_1" />
-                <MenuItem
-                Header="О Разработчике" Click="MenuItem_Click" />
             </Menu>
         </materialDesign:Card>
 
