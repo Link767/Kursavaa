@@ -34,7 +34,7 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <materialDesign:Card Grid.Row="4" Grid.Column="1" Margin="0,0,1,91" Grid.ColumnSpan="2">
+        <materialDesign:Card Grid.Row="4" Grid.Column="1" Margin="0,0,0,91" Grid.ColumnSpan="6">
             <Menu
     materialDesign:MenuAssist.TopLevelMenuItemHeight="{Binding RelativeSource={RelativeSource FindAncestor,
     AncestorType={x:Type materialDesign:Card}}, Path=ActualHeight}">
@@ -54,7 +54,9 @@
         Header="КАССЫ" Click="Kas"/>
                 </MenuItem>
                 <MenuItem
-    Header="Информация о программе" />
+        Header="Информация о программе" />
+                <MenuItem
+        Header="Личный кабинет" Click="lklk"/>
 
             </Menu>
         </materialDesign:Card>

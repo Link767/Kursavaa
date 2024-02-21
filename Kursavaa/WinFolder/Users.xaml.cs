@@ -65,5 +65,12 @@ namespace Kursavaa.WinFolder
             staff.Show();
             this.Close();
         }
+
+        private void lklk(object sender, RoutedEventArgs e)
+        {
+            LK lK = new LK();
+            lK.Show();
+            this.Close();
+        }
     }
 }

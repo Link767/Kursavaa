@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Kursavaa.WinFolder"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
@@ -34,44 +35,59 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
+
         <Rectangle RadiusX="50" RadiusY="50"
                    Grid.Row="4" Grid.Column="1"
         Opacity="0.7" 
-        VerticalAlignment="Center" HorizontalAlignment="Left" 
-        Width="473" Height="780" 
-        Fill="#FC2847" Grid.ColumnSpan="2" Grid.RowSpan="6"/>
+        VerticalAlignment="Top" HorizontalAlignment="Left" 
+        Width="472" Height="780" 
+        Fill="#FC2847" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="234,2,0,0"/>
 
         <Rectangle RadiusX="50" RadiusY="50"
-             Grid.Row="4" Grid.Column="5"
+             Grid.Row="4" Grid.Column="4"
              Opacity="0.7" 
              VerticalAlignment="Center" HorizontalAlignment="Left" 
              Width="463" Height="780" 
-             Fill="#FC2847" Grid.RowSpan="6" Grid.ColumnSpan="2"/>
+             Fill="#FC2847" Grid.RowSpan="6" Grid.ColumnSpan="2" Margin="4,0,0,0"/>
 
 
-        <TextBlock Grid.Row="4" Grid.Column="1"
+        <TextBlock Grid.Row="4" Grid.Column="2"
             Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-            Text="О разработчике" Grid.ColumnSpan="2" Margin="80,28,130,52" />
+            Text="О разработчике" Grid.ColumnSpan="2" Margin="77,30,133,50" />
 
-        <TextBlock Grid.Row="4" Grid.Column="5"
+        <TextBlock Grid.Row="4" Grid.Column="4"
             Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-            Text="О программе" Margin="125,28,135,44" Grid.ColumnSpan="2" />
+            Text="О программе" Margin="129,28,131,44" Grid.ColumnSpan="2" />
 
-        <TextBlock Grid.Row="8" Grid.Column="1"
+        <TextBlock Grid.Row="8" Grid.Column="2"
                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                   Grid.ColumnSpan="2" Margin="18,2,69,43" TextWrapping="Wrap">
+                   Grid.ColumnSpan="2" Margin="15,4,72,42" TextWrapping="Wrap">
                    Каралис Алесандр Александрович
                    Учиник группы Д-03-3ИСП21
         </TextBlock>
-        <TextBlock Grid.Row="8" Grid.Column="1"
+
+        <TextBlock Grid.Row="8" Grid.Column="2"
                    Text="Номер: +7(985)-291-61-81" FontSize="20" 
                    
-                   Grid.ColumnSpan="2" Margin="43,65,183,30"/>
+                   Grid.ColumnSpan="2" Margin="39,66,186,28"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="4"
+                   Style="{StaticResource MaterialDesignHeadline6TextBlock}"
+                TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2" Margin="122,0,115,0">
+            Программа для учета заказов ООО "Ваилдбириз"
+            созданна учеником колледжа ГБПОУ ТК #34
+            группы Д-0-3ИСП21 Каралисом А.А
+        </TextBlock>
 
         <Image Grid.Row="5"
                 Source="C:\Users\Студент\Source\Repos\Kursavaa\Kursavaa\Image\msg981036250-244963.jpg" 
-               Margin="-47,5,231,5" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
+               Margin="176,6,235,4" Grid.ColumnSpan="4" Grid.RowSpan="3" Grid.Column="1"/>
 
+        <Button Grid.Row="3" Grid.Column="1"
+    materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+    Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
+            Вернуться в личный кабинет
+        </Button>
 
     </Grid>
 </Window>

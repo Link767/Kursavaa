@@ -23,5 +23,12 @@ namespace Kursavaa.WinFolder
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LK lK = new LK();
+            lK.Show();
+            this.Close();
+        }
     }
 }
