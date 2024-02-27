@@ -16,9 +16,11 @@ namespace Kursavaa.WinFolder
 {
     public partial class Point : Window
     {
+        Class.ClassDG classDG;
         public Point()
         {
             InitializeComponent();
+            classDG = new Class.ClassDG(DgPoint);
         }
 
         private void lk(object sender, RoutedEventArgs e)
@@ -68,6 +70,11 @@ namespace Kursavaa.WinFolder
             LK lK = new LK();
             lK.Show();
             this.Close();
+        }
+
+        private void DGP(object sender, RoutedEventArgs e)
+        {
+            classDG.LoadDB("Select * from ViewPoint");
         }
     }
 }
