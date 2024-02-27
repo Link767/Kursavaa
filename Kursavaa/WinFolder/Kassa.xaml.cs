@@ -11,14 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.SqlClient;
 
 namespace Kursavaa.WinFolder
 {
     public partial class Kassa : Window
     {
+        Class.ClassDG classDG;
         public Kassa()
         {
             InitializeComponent();
+            classDG = new Class.ClassDG(DgKassa);
         }
 
         private void lk(object sender, RoutedEventArgs e)
@@ -68,6 +71,11 @@ namespace Kursavaa.WinFolder
             LK lK = new LK();
             lK.Show();
             this.Close();
+        }
+
+        private void DGKassa_Loaded(object sender, RoutedEventArgs e)
+        {
+            classDG.LoadDB("Select * from ViewKassa");
         }
     }
 }

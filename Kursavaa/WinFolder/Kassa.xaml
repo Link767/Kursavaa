@@ -93,5 +93,26 @@
      AncestorType=Window}}"
      Style="{StaticResource MaterialDesignOutlinedButton}"  
     Cursor="Hand" Grid.Column="6" Grid.Row="9" />
+
+        <DataGrid x:Name="DgKassa" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" 
+                  Margin="0,0,0,128" Grid.RowSpan="5" Loaded="DGKassa_Loaded"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер кассы"
+                    Binding="{Binding IdKassa}"/>
+                <DataGridTextColumn Header="Номер дома"
+                    Binding="{Binding HousNumber}"/>
+                <DataGridTextColumn Header="Улица"
+                    Binding="{Binding StreetName}"/>
+                <DataGridTextColumn Header="Город"
+                    Binding="{Binding GityName}"/>
+                <DataGridTextColumn Header="Имя работника"
+                    Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Фамилия работника"
+                    Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="Отчество работника"
+                    Binding="{Binding LastName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
