@@ -36,10 +36,12 @@
 
         <materialDesign:Card Grid.Row="4" Grid.Column="1" Margin="0,0,0,91" Grid.ColumnSpan="6">
             <Menu
-        materialDesign:MenuAssist.TopLevelMenuItemHeight="{Binding RelativeSource={RelativeSource FindAncestor,
-        AncestorType={x:Type materialDesign:Card}}, Path=ActualHeight}">
+        materialDesign:MenuAssist.TopLevelMenuItemHeight=
+                "{Binding RelativeSource={RelativeSource FindAncestor,
+                AncestorType={x:Type materialDesign:Card}}, Path=ActualHeight}">
+
                 <MenuItem
-            Header="File">
+            Header="Таблицы">
                     <MenuItem
             Header="ЛИЧНЫЙ КАБИНЕТ" Click="lk"/>
                     <MenuItem
@@ -57,41 +59,27 @@
             Header="Информация о программе" />
                 <MenuItem
             Header="Личный кабинет" Click="lklk"/>
-
             </Menu>
+            
         </materialDesign:Card>
 
-        <Button
-            Margin="50,49,50,49"
-            materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-            materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-            materialDesign:ButtonProgressAssist.Value="-1"
-            Content="ДОБАВИТЬ"
-            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, 
-            AncestorType=Window}}"
-            Style="{StaticResource MaterialDesignOutlinedButton}"
-            Cursor="Hand" Grid.Column="1" Grid.Row="9" />
+        <Button Grid.Column="1" Grid.Row="9"  Margin="50,49,50,49"
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
+            ДОБАВИТЬ
+        </Button>
 
-        <Button
-           Margin="169,49,169,49"
-           materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-           materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-           materialDesign:ButtonProgressAssist.Value="-1"
-           Content="УДАЛИТЬ"
-           IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, 
-           AncestorType=Window}}"
-           Style="{StaticResource MaterialDesignOutlinedButton}"  
-           Cursor="Hand" Grid.Column="3" Grid.Row="9" Grid.ColumnSpan="2" />
-        <Button
-           Margin="50,49,50,49"
-           materialDesign:ButtonProgressAssist.IsIndeterminate="True"
-           materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
-           materialDesign:ButtonProgressAssist.Value="-1"
-           Content="ИЗМЕНИТЬ"
-           IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, 
-           AncestorType=Window}}"
-           Style="{StaticResource MaterialDesignOutlinedButton}"  
-           Cursor="Hand" Grid.Column="6" Grid.Row="9" />
+        <Button Grid.Column="6" Grid.Row="9"  Margin="50,49,50,49"
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
+            УДАЛИТЬ
+        </Button>
+
+        <Button Grid.Column="3" Grid.Row="9" Grid.ColumnSpan="2" Margin="169,49,169,49"
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
+            ИЗМЕНИТЬ
+        </Button>
 
         <DataGrid x:Name="DgPoint" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" 
                   Margin="0,0,0,128" Grid.RowSpan="5" Loaded="DGP"

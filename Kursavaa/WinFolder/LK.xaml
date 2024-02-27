@@ -41,8 +41,9 @@
                 materialDesign:MenuAssist.TopLevelMenuItemHeight=
                 "{Binding RelativeSource={RelativeSource FindAncestor,
                 AncestorType={x:Type materialDesign:Card}}, Path=ActualHeight}">
+
                 <MenuItem
-                Header="File">
+                Header="Таблицы">
                     <MenuItem x:Name="Produkt"
                     Header="ПРОДУКТЫ" Click="Prod"/>
                     <MenuItem
@@ -56,16 +57,16 @@
                     <MenuItem
                     Header="КЛИЕНТЫ" Click="User"/>
                 </MenuItem>
-
                 <MenuItem
                 Header="Руководство пользователя" Click="PolzovatelRuk" />
                 <MenuItem
                 Header="Информация о программе" Click="MenuItem_Click_1" />
+                
             </Menu>
         </materialDesign:Card>
 
-        <Calendar Grid.Row="5" Grid.Column="5"
+        <Calendar Grid.Row="4" Grid.Column="5"
                   materialDesign:CalendarAssist.Orientation="Horizontal" 
-                  Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                  Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="0,127,0,127" />
     </Grid>
 </Window>
