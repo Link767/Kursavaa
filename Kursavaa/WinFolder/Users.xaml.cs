@@ -19,9 +19,11 @@ namespace Kursavaa.WinFolder
     /// </summary>
     public partial class Users : Window
     {
+        Class.ClassDG classDG;
         public Users()
         {
             InitializeComponent();
+            classDG = new Class.ClassDG(DgUser);
         }
 
         private void lk(object sender, RoutedEventArgs e)
@@ -71,6 +73,11 @@ namespace Kursavaa.WinFolder
             LK lK = new LK();
             lK.Show();
             this.Close();
+        }
+
+        private void DGUser_Loaded(object sender, RoutedEventArgs e)
+        {
+            classDG.LoadDB("Select * from ViewUser");
         }
     }
 }

@@ -96,5 +96,28 @@
             AncestorType=Window}}"
             Style="{StaticResource MaterialDesignOutlinedButton}"  
             Cursor="Hand" Grid.Column="6" Grid.Row="9" />
+
+        <DataGrid x:Name="DgUser" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" 
+                  Margin="0,0,0,128" Grid.RowSpan="5" Loaded="DGUser_Loaded"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя клиента"
+                    Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Фамилия клиента"
+                    Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="Отчество клиента"
+                    Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Номер телефона"
+                    Binding="{Binding Number}"/>
+                <DataGridTextColumn Header="Пол"
+                    Binding="{Binding GenderName}"/>
+                <DataGridTextColumn Header="День рождения"
+                    Binding="{Binding Day}"/>
+                <DataGridTextColumn Header="Месяц рождения"
+                    Binding="{Binding MonthName}"/>
+                <DataGridTextColumn Header="Год рождения"
+                    Binding="{Binding YearName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
