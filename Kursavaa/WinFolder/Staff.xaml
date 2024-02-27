@@ -91,5 +91,28 @@
             AncestorType=Window}}"
             Style="{StaticResource MaterialDesignOutlinedButton}"  
             Cursor="Hand" Grid.Column="6" Grid.Row="9" />
+
+        <DataGrid x:Name="DgStaff" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" 
+                  Margin="0,0,0,128" Grid.RowSpan="5" Loaded="DGStaff_Loaded"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя работника"
+                    Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Фамилия работника"
+                    Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="Отчество работника"
+                    Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Возрост"
+                    Binding="{Binding age}"/>
+                <DataGridTextColumn Header="ИНН"
+                    Binding="{Binding ENNNum}"/>
+                <DataGridTextColumn Header="Пол"
+                    Binding="{Binding GenderName}"/>
+                <DataGridTextColumn Header="Код Подразделения"
+                    Binding="{Binding UnitCodeName}"/>
+                <DataGridTextColumn Header="Семейное положение"
+                    Binding="{Binding MaritalStatusName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

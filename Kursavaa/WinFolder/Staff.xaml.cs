@@ -19,9 +19,11 @@ namespace Kursavaa.WinFolder
     /// </summary>
     public partial class Staff : Window
     {
+        Class.ClassDG classDG;
         public Staff()
         {
             InitializeComponent();
+            classDG = new Class.ClassDG(DgStaff);
         }
 
         private void lk(object sender, RoutedEventArgs e)
@@ -71,6 +73,11 @@ namespace Kursavaa.WinFolder
             LK lK = new LK();
             lK.Show();
             this.Close();
+        }
+
+        private void DGStaff_Loaded(object sender, RoutedEventArgs e)
+        {
+            classDG.LoadDB("Select * from ViewStaff");
         }
     }
 }
