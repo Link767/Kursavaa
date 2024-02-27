@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursavaa.Class;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,11 @@ namespace Kursavaa.WinFolder
     /// </summary>
     public partial class Zac : Window
     {
+        Class.ClassDG classDG;
         public Zac()
         {
             InitializeComponent();
+            classDG = new Class.ClassDG(DgZack);
         }
 
         private void lk(object sender, RoutedEventArgs e)
@@ -71,6 +74,11 @@ namespace Kursavaa.WinFolder
             LK lK = new LK();
             lK.Show();
             this.Close();
+        }
+
+        private void DGPoint_Loaded(object sender, RoutedEventArgs e)
+        {
+            classDG.LoadDB("Select * from ViewProduct");
         }
     }
 }

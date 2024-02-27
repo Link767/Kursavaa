@@ -92,5 +92,26 @@
        AncestorType=Window}}"
        Style="{StaticResource MaterialDesignOutlinedButton}"  
        Cursor="Hand" Grid.Column="6" Grid.Row="9" />
+
+        <DataGrid x:Name="DgZack" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" 
+          Margin="0,0,0,128" Grid.RowSpan="5" Loaded="DGPoint_Loaded"
+          AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер заказа"
+            Binding="{Binding IdZakaz}"/>
+                <DataGridTextColumn Header="Наименование товара"
+            Binding="{Binding ProduktName}"/>
+                <DataGridTextColumn Header="Цена"
+            Binding="{Binding Cost}"/>
+                <DataGridTextColumn Header="Имя клиента"
+            Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Фамилия клиента"
+            Binding="{Binding Surname}"/>
+                <DataGridTextColumn Header="Имя точки на которую придет товар"
+            Binding="{Binding PointName}"/>
+                <DataGridTextColumn Header="Статус доставки"
+            Binding="{Binding StatusName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

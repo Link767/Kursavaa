@@ -91,5 +91,18 @@
             AncestorType=Window}}"
             Style="{StaticResource MaterialDesignOutlinedButton}"  
             Cursor="Hand" Grid.Column="6" Grid.Row="9" />
+
+        <DataGrid x:Name="DgProduct" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" 
+                  Margin="0,0,0,128" Grid.RowSpan="5" Loaded="DGPoint_Loaded"
+                  AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Номер продукта"
+                    Binding="{Binding IdProdukt}"/>
+                <DataGridTextColumn Header="Наименование товара"
+                    Binding="{Binding ProduktName}"/>
+                <DataGridTextColumn Header="Цена"
+                    Binding="{Binding Cost}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

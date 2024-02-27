@@ -19,9 +19,11 @@ namespace Kursavaa.WinFolder
     /// </summary>
     public partial class Product : Window
     {
+        Class.ClassDG classDG;
         public Product()
         {
             InitializeComponent();
+            classDG = new Class.ClassDG(DgProduct);
         }
 
         private void lk(object sender, RoutedEventArgs e)
@@ -71,6 +73,11 @@ namespace Kursavaa.WinFolder
             LK lK = new LK();
             lK.Show();
             this.Close();
+        }
+
+        private void DGPoint_Loaded(object sender, RoutedEventArgs e)
+        {
+            classDG.LoadDB("Select * from ViewProd");
         }
     }
 }
