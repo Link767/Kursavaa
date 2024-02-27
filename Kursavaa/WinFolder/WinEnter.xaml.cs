@@ -1,5 +1,4 @@
-﻿using Kursavaa.WinFolder;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.SqlClient;
 
-namespace Kursavaa
+namespace Kursavaa.WinFolder
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Логика взаимодействия для WinEnter.xaml
+    /// </summary>
+    public partial class WinEnter : Window
     {
-        public MainWindow()
+        public WinEnter()
         {
             InitializeComponent();
         }
-
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {

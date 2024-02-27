@@ -80,7 +80,7 @@
         </TextBlock>
 
         <Image Grid.Row="5"
-                Source="C:\Users\Студент\Source\Repos\Kursavaa\Kursavaa\Image\msg981036250-244963.jpg" 
+                Source="/Image/msg981036250-244963.jpg" 
                Margin="176,6,235,4" Grid.ColumnSpan="4" Grid.RowSpan="3" Grid.Column="1"/>
 
         <Button Grid.Row="3" Grid.Column="1"
