@@ -47,8 +47,6 @@
                     <MenuItem
                 Header="ЗАКАЗЫ" Click="Zac"/>
                     <MenuItem
-                Header="ТОЧКИ" Click="Point"/>
-                    <MenuItem
                 Header="СОТРУДНИКИ" Click="Staf"/>
                     <MenuItem
                 Header="КЛИЕНТЫ" Click="User"/>

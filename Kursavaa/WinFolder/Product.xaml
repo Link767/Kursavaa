@@ -45,8 +45,6 @@
                     <MenuItem
             Header="ЗАКАЗЫ" Click="Zac"/>
                     <MenuItem
-            Header="ТОЧКИ" Click="Point"/>
-                    <MenuItem
             Header="СОТРУДНИКИ" Click="Staf"/>
                     <MenuItem
             Header="КЛИЕНТЫ" Click="User"/>
@@ -63,7 +61,7 @@
 
         <Button Grid.Column="1" Grid.Row="9"  Margin="50,49,50,49"
         materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
-        Style="{StaticResource MaterialDesignRaisedDarkButton}">
+        Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
             ДОБАВИТЬ
         </Button>
 

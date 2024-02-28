@@ -49,8 +49,6 @@
                     <MenuItem
             Header="КАССЫ" Click="Kas"/>
                     <MenuItem
-            Header="ТОЧКИ" Click="Point"/>
-                    <MenuItem
             Header="КЛИЕНТЫ" Click="User"/>
                 </MenuItem>
                 <MenuItem

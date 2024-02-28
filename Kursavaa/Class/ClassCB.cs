@@ -119,13 +119,61 @@ namespace Kursavaa.Class
             {
                 sqlConnection.Open();
                 dataAdapter = new SqlDataAdapter("SELECT IdMaritalStatus, " +
-                    "MaritalStatusName FROM dbo.[MaritalStatus] Order by IdGender ASC",
+                    "MaritalStatusName FROM dbo.[MaritalStatus] Order by IdMaritalStatus ASC",
                     sqlConnection);
                 dataSet = new DataSet();
                 dataAdapter.Fill(dataSet, "[MaritalStatus]");
                 cbMaritalStatus.ItemsSource = dataSet.Tables["[MaritalStatus]"].DefaultView;
                 cbMaritalStatus.DisplayMemberPath = dataSet.Tables["[MaritalStatus]"].Columns["MaritalStatusName"].ToString();
                 cbMaritalStatus.SelectedValuePath = dataSet.Tables["[MaritalStatus]"].Columns["IdMaritalStatus"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void LoadStatus(ComboBox cbStatus)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdStatus, " +
+                    "StatusName FROM dbo.[Status] Order by IdStatus ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[Status]");
+                cbStatus.ItemsSource = dataSet.Tables["[Status]"].DefaultView;
+                cbStatus.DisplayMemberPath = dataSet.Tables["[Status]"].Columns["StatusName"].ToString();
+                cbStatus.SelectedValuePath = dataSet.Tables["[Status]"].Columns["IdStatus"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void LoadAddress(ComboBox cbAddress)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdAddress, " +
+                    "HousNumber FROM dbo.[Address] Order by IdAddress ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[Address]");
+                cbAddress.ItemsSource = dataSet.Tables["[Address]"].DefaultView;
+                cbAddress.DisplayMemberPath = dataSet.Tables["[Address]"].Columns["HousNumber"].ToString();
+                cbAddress.SelectedValuePath = dataSet.Tables["[Address]"].Columns["IdAddress"].ToString();
             }
             catch (Exception ex)
             {

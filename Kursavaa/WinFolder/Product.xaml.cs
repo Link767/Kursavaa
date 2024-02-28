@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursavaa.WinAddFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,13 +41,6 @@ namespace Kursavaa.WinFolder
             this.Close();
         }
 
-        private void Point(object sender, RoutedEventArgs e)
-        {
-            Point point = new Point();
-            point.Show();
-            this.Close();
-        }
-
         private void Staf(object sender, RoutedEventArgs e)
         {
             Staff staff = new Staff();
@@ -78,6 +72,13 @@ namespace Kursavaa.WinFolder
         private void DGPoint_Loaded(object sender, RoutedEventArgs e)
         {
             classDG.LoadDB("Select * from ViewProd");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ProductAdd productAdd = new ProductAdd();
+            productAdd.Show();
+            this.Close();
         }
     }
 }

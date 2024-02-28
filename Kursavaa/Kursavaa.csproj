@@ -79,14 +79,23 @@
     <Compile Include="WinAddFolder\KassaAdd.xaml.cs">
       <DependentUpon>KassaAdd.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinAddFolder\ProductAdd.xaml.cs">
+      <DependentUpon>ProductAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinAddFolder\StaffAdd.xaml.cs">
+      <DependentUpon>StaffAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinAddFolder\UserAdd.xaml.cs">
+      <DependentUpon>UserAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinAddFolder\ZacAdd.xaml.cs">
+      <DependentUpon>ZacAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinFolder\Kassa.xaml.cs">
       <DependentUpon>Kassa.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinFolder\OPo.xaml.cs">
       <DependentUpon>OPo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WinFolder\Point.xaml.cs">
-      <DependentUpon>Point.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinFolder\Product.xaml.cs">
       <DependentUpon>Product.xaml</DependentUpon>
@@ -107,6 +116,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WinAddFolder\ProductAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinAddFolder\StaffAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinAddFolder\UserAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinAddFolder\ZacAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinFolder\Kassa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,10 +148,6 @@
       <DependentUpon>LK.xaml</DependentUpon>
     </Compile>
     <Page Include="WinFolder\OPo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WinFolder\Point.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

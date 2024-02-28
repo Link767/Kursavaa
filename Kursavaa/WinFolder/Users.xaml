@@ -51,8 +51,6 @@
                     <MenuItem
             Header="КАССЫ" Click="Kas"/>
                     <MenuItem
-            Header="ТОЧКИ" Click="Point"/>
-                    <MenuItem
             Header="СОТРУДНИКИ" Click="Staf"/>
                 </MenuItem>
                 <MenuItem

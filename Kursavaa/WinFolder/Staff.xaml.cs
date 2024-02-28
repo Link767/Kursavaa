@@ -54,13 +54,6 @@ namespace Kursavaa.WinFolder
             this.Close();
         }
 
-        private void Point(object sender, RoutedEventArgs e)
-        {
-            Point point = new Point();
-            point.Show();
-            this.Close();
-        }
-
         private void User(object sender, RoutedEventArgs e)
         {
             Users users = new Users();
