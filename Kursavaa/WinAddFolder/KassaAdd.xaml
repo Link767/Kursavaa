@@ -1,0 +1,64 @@
+﻿<Window x:Class="Kursavaa.WinAddFolder.KassaAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Kursavaa.WinAddFolder"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Касса добавление" Height="1024" Width="1440" Background="#669E85" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="1" Grid.Row="8"  Margin="106,49,140,49"
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="AddKassa_Click" Grid.ColumnSpan="2">
+            ДОБАВИТЬ
+        </Button>
+
+        <TextBlock Grid.Row="7" Grid.Column="1"
+                   Text="Город" Margin="71,53,106,53" FontSize="20"/>
+        <ComboBox x:Name="cdCity"
+                  Grid.Column="1" Grid.Row="7" Margin="219,0,27,0" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="6" Grid.Column="1"
+                   Text="Улица" Margin="71,53,106,53" FontSize="20"/>
+        <ComboBox x:Name="cdStreet"
+          Grid.Column="1" Grid.Row="6" Margin="220,0,27,0" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="5" Grid.Column="1"
+                   Text="Имя сотрудника" Margin="24,53,58,53" FontSize="20"/>
+        <ComboBox x:Name="cdStaff"
+            Grid.Column="1" Grid.Row="5" Margin="220,0,27,0" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="4" Grid.Column="1"
+                   Text="Номер дома" Margin="42,53,75,53" FontSize="20"/>
+        <TextBox x:Name="TbHouseNumber"
+                 Grid.Column="1" Grid.Row="4" Margin="220,55,27,52" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</Window>

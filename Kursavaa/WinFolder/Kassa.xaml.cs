@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using Kursavaa.WinAddFolder;
 
 namespace Kursavaa.WinFolder
 {
@@ -76,6 +77,13 @@ namespace Kursavaa.WinFolder
         private void DGKassa_Loaded(object sender, RoutedEventArgs e)
         {
             classDG.LoadDB("Select * from ViewKassa");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            KassaAdd kassaAdd = new KassaAdd();
+            kassaAdd.Show();
+            this.Close();
         }
     }
 }

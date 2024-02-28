@@ -74,7 +74,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class\ClassCB.cs" />
     <Compile Include="Class\ClassDG.cs" />
+    <Compile Include="WinAddFolder\KassaAdd.xaml.cs">
+      <DependentUpon>KassaAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinFolder\Kassa.xaml.cs">
       <DependentUpon>Kassa.xaml</DependentUpon>
     </Compile>
@@ -99,6 +103,10 @@
     <Compile Include="WinFolder\Zac.xaml.cs">
       <DependentUpon>Zac.xaml</DependentUpon>
     </Compile>
+    <Page Include="WinAddFolder\KassaAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinFolder\Kassa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
