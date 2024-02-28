@@ -184,5 +184,77 @@ namespace Kursavaa.Class
                 sqlConnection.Close();
             }
         }
+
+        public void LoadYear(ComboBox cdYear)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdYear, " +
+                    "YearName FROM dbo.[Year] Order by IdYear ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[Year]");
+                cdYear.ItemsSource = dataSet.Tables["[Year]"].DefaultView;
+                cdYear.DisplayMemberPath = dataSet.Tables["[Year]"].Columns["YearName"].ToString();
+                cdYear.SelectedValuePath = dataSet.Tables["[Year]"].Columns["IdYear"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void LoadMonth(ComboBox cdMonth)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdMonth, " +
+                    "MonthName FROM dbo.[Month] Order by IdMonth ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[Month]");
+                cdMonth.ItemsSource = dataSet.Tables["[Month]"].DefaultView;
+                cdMonth.DisplayMemberPath = dataSet.Tables["[Month]"].Columns["MonthName"].ToString();
+                cdMonth.SelectedValuePath = dataSet.Tables["[Month]"].Columns["IdMonth"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void LoadPoint(ComboBox cbPoint)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdPoint, " +
+                    "PointName FROM dbo.[Point] Order by IdPoint ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[Point]");
+                cbPoint.ItemsSource = dataSet.Tables["[Point]"].DefaultView;
+                cbPoint.DisplayMemberPath = dataSet.Tables["[Point]"].Columns["PointName"].ToString();
+                cbPoint.SelectedValuePath = dataSet.Tables["[Point]"].Columns["IdPoint"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
     }   
 }

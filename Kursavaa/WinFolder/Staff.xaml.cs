@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursavaa.WinAddFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,13 @@ namespace Kursavaa.WinFolder
         private void DGStaff_Loaded(object sender, RoutedEventArgs e)
         {
             classDG.LoadDB("Select * from ViewStaff");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            StaffAdd staffAdd = new StaffAdd();
+            staffAdd.Show();
+            this.Close();
         }
     }
 }

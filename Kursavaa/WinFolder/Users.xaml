@@ -62,8 +62,8 @@
         </materialDesign:Card>
 
         <Button Grid.Column="1" Grid.Row="9"  Margin="50,49,50,49"
-        materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
-        Style="{StaticResource MaterialDesignRaisedDarkButton}">
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="UserAdd_Click">
             ДОБАВИТЬ
         </Button>
 

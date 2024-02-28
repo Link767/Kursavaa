@@ -1,4 +1,5 @@
 ﻿using Kursavaa.Class;
+using Kursavaa.WinAddFolder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,6 +73,13 @@ namespace Kursavaa.WinFolder
         private void DGPoint_Loaded(object sender, RoutedEventArgs e)
         {
             classDG.LoadDB("Select * from ViewProduct");
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ZacAdd zacAdd = new ZacAdd();   
+            zacAdd.Show();
+            this.Close();
         }
     }
 }

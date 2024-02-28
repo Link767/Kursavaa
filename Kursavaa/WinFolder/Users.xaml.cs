@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kursavaa.WinAddFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,13 @@ namespace Kursavaa.WinFolder
         private void DGUser_Loaded(object sender, RoutedEventArgs e)
         {
             classDG.LoadDB("Select * from ViewUser");
+        }
+
+        private void UserAdd_Click(object sender, RoutedEventArgs e)
+        {
+            UserAdd userAdd = new UserAdd();
+            userAdd.Show();
+            this.Close();
         }
     }
 }
