@@ -39,5 +39,10 @@ namespace Kursavaa.WinAddFolder
             sqlCommand.Parameters.AddWithValue("@ProduktName", TBProName.Text);
             sqlCommand.Parameters.AddWithValue("@Cost", Convert.ToDecimal(TBCost.Text));
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }

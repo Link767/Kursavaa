@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-    Title="Продукты добавление" Height="1024" Width="1440" Background="#669E85">
+    Title="Продукты добавление" Height="1024" Width="1440" Background="#669E85" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
