@@ -34,24 +34,30 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="2" Text="Имя" Margin="4,3,0,5"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="4" Text="Имя" Margin="0,92,0,0"/>
+        <TextBox  x:Name="TBName" Grid.Column="2" Grid.Row="4" Margin="0,92,0,0"/>
 
-        <TextBlock FontSize="20" Grid.Row="3" Text="Фамилия" Margin="0,2,5,0" Grid.Column="1"/>
+        <TextBlock FontSize="20" Grid.Row="5" Text="Фамилия" Margin="0,92,0,0" Grid.Column="1"/>
+        <TextBox x:Name="TBSurname" Grid.Column="2" Grid.Row="5" Margin="0,92,0,0"/>
 
-        <TextBlock FontSize="20" Grid.Row="4" Text="Отчество" Margin="0,0,0,92" Grid.Column="1"/>
+        <TextBlock FontSize="20" Grid.Row="6" Text="Отчество" Margin="0,92,0,0" Grid.Column="1"/>
+        <TextBox x:Name="TBLastName" Grid.Column="2" Grid.Row="6" Margin="0,92,0,0"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="5" Text="Номер" Margin="0,0,0,92"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="7" Text="Номер" Margin="0,92,0,0"/>
+        <TextBox x:Name="Num" Grid.Column="2" Grid.Row="7" Margin="0,92,0,0"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="6" Text="Пол" Margin="0,0,0,92"/>
-        <ComboBox Name="cdGender" Grid.Column="2" Grid.Row="6" Margin="0,0,0,92"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="8" Text="Пол" Margin="0,92,0,0"/>
+        <ComboBox Name="cdGender" Grid.Column="2" Grid.Row="8" Margin="0,92,10,0" VerticalAlignment="Top"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="7" Text="День" Margin="0,0,0,92"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="4" Text="День" Margin="0,92,0,0"/>
+        <TextBox x:Name="Day" Grid.Column="4" Grid.Row="4" Margin="0,92,0,0"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="8" Text="Месяц" Margin="0,0,0,92"/>
-        <ComboBox Name="cdMonth" Grid.Column="2" Grid.Row="8" Margin="0,0,0,92"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="5" Text="Месяц" Margin="0,92,0,0"/>
+        <ComboBox x:Name="cdMonth" Grid.Column="4" Grid.Row="5" Margin="0,99,10,0" VerticalAlignment="Top"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="9" Text="Год" Margin="0,0,0,92"/>
-        <ComboBox Name="cdYear" Grid.Column="2" Grid.Row="9" Margin="0,0,0,92"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="6" Text="Год" Margin="0,92,0,0"/>
+        <TextBox x:Name="TBYear" Grid.Column="4" Grid.Row="6" Margin="0,92,0,0"/>
+
 
         <Button Grid.Column="1" Grid.Row="10"  Margin="123,38,123,60"
     materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"

@@ -36,8 +36,28 @@ namespace Kursavaa.WinAddFolder
 
         private void AddKassa_Click(object sender, RoutedEventArgs e)
         {
-            sqlCommand.Parameters.AddWithValue("@ProduktName", TBProName.Text);
-            sqlCommand.Parameters.AddWithValue("@Cost", Convert.ToDecimal(TBCost.Text));
+            // Добавление Года
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand("Insert into dbo.[Produkt] " +
+                "(ProduktName, Cost) " +
+                "Values " +
+                "(@ProduktName, @Cost)", sqlConnection);
+
+            sqlCommand.Parameters.AddWithValue("ProduktName", TBProName.Text);
+            sqlCommand.Parameters.AddWithValue("Cost", TBCost.Text);
+            sqlCommand.ExecuteNonQuery();
+
+            //получение Года
+            sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
+               $"where ProduktName = {TBProName.Text}", sqlConnection);
+
+            sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
+               $"where Cost = {TBCost.Text}", sqlConnection);
+
+            dataReader = sqlCommand.ExecuteReader();
+            dataReader.Read();
+            IdProdukt = dataReader[0].ToString();
+            dataReader.Close();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)

@@ -34,18 +34,18 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <TextBox FontSize="20" Grid.Column="1" Grid.Row="4" Text="Имя" Margin="0,93,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="4" Text="Имя" Margin="0,93,0,0"/>
 
-        <TextBox FontSize="20" Grid.Column="1" Grid.Row="5" Text="Фамилия" Margin="0,93,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="5" Text="Фамилия" Margin="0,93,0,0"/>
 
-        <TextBox FontSize="20" Grid.Column="1" Grid.Row="6" Text="Отчество" Margin="0,93,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="6" Text="Отчество" Margin="0,93,0,0"/>
 
-        <TextBox FontSize="20" Grid.Column="1" Grid.Row="7" Text="Пол" Margin="0,93,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="7" Text="Пол" Margin="0,93,0,0"/>
         <ComboBox Name="cbGender" Grid.Column="2" Grid.Row="7" Margin="20,100,20,0" VerticalAlignment="Top"/>
 
-        <TextBox FontSize="20" Grid.Column="1" Grid.Row="8" Text="ИНН" Margin="0,93,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="8" Text="ИНН" Margin="0,93,0,0"/>
 
-        <TextBox FontSize="20" Grid.Column="1" Grid.Row="9" Text="Код подразделения" Margin="0,93,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="9" Text="Код подразделения" Margin="0,93,0,0"/>
 
         <Button Grid.Column="1" Grid.Row="10"  Margin="123,38,123,60"
          materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
