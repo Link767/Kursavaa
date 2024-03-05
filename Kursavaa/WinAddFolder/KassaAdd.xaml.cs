@@ -73,7 +73,7 @@ namespace Kursavaa.WinAddFolder
 
 
                 MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-                new Kassa().Show();
+                
                 Close();
 
 
