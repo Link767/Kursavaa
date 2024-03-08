@@ -33,7 +33,6 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-
         
     </Grid>
 </Window>
