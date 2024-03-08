@@ -37,9 +37,9 @@ namespace Kursavaa.WinAddFolder
         private void AddKassa_Click(object sender, RoutedEventArgs e)
         {
             try 
-            { 
+            {
 
-                // Добавление Года
+                // Добавление Produkt
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand("Insert into dbo.[Produkt] " +
                 "(ProduktName, Cost) " +
@@ -51,28 +51,22 @@ namespace Kursavaa.WinAddFolder
                 sqlCommand.ExecuteNonQuery();
                 sqlConnection.Close();
 
-                //получение Года
+                //получение Produkt
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
                $"where ProduktName = {TBProName.Text}", sqlConnection);
                 sqlConnection.Close();
 
-
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
                $"where Cost = {TBCost.Text}", sqlConnection);
-            
-
                 dataReader = sqlCommand.ExecuteReader();
                 dataReader.Read();
                 IdProdukt = dataReader[0].ToString();
                 dataReader.Close();
 
-            
-
                 MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                Product product = new Product();
                 product.Show();
                 this.Close();
 
@@ -87,7 +81,6 @@ namespace Kursavaa.WinAddFolder
                 sqlConnection.Close();
             }
         }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
            

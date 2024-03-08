@@ -35,21 +35,43 @@
         </Grid.RowDefinitions>
 
         <TextBlock FontSize="20" Grid.Column="1" Grid.Row="4" Text="Имя" Margin="0,93,0,0"/>
+        <TextBox x:Name="Name" Grid.Column="2" Grid.Row="4" Margin="0,93,0,0"/>
 
         <TextBlock FontSize="20" Grid.Column="1" Grid.Row="5" Text="Фамилия" Margin="0,93,0,0"/>
+        <TextBox x:Name="TBSurname" Grid.Column="2" Grid.Row="5" Margin="0,93,0,0"/>
 
         <TextBlock FontSize="20" Grid.Column="1" Grid.Row="6" Text="Отчество" Margin="0,93,0,0"/>
+        <TextBox x:Name="TBLastName" Grid.Column="2" Grid.Row="6" Margin="0,93,0,0"/>
 
         <TextBlock FontSize="20" Grid.Column="1" Grid.Row="7" Text="Пол" Margin="0,93,0,0"/>
-        <ComboBox Name="cbGender" Grid.Column="2" Grid.Row="7" Margin="20,100,20,0" VerticalAlignment="Top"/>
+        <ComboBox Name="cbGender" Grid.Column="2" Grid.Row="7" Margin="0,93,0,0" VerticalAlignment="Top"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="8" Text="ИНН" Margin="0,93,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="4" Text="ИНН" Margin="0,93,0,0"/>
+        <TextBox x:Name="TBENN"  Grid.Column="4" Grid.Row="4" Margin="0,93,0,0"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="9" Text="Код подразделения" Margin="0,93,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="5" Text="Код подразделения" Margin="0,93,0,0"/>
+        <TextBox x:Name="TBUnitCode" Grid.Column="4" Grid.Row="5" Margin="0,93,0,0"/>
 
-        <Button Grid.Column="1" Grid.Row="10"  Margin="123,38,123,60"
-         materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
-         Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="AddKassa_Click" Grid.ColumnSpan="2">
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="6" Text="Семейное положение" Margin="0,93,0,0"/>
+        <ComboBox x:Name="cdMaritalStatus" Grid.Column="4" Grid.Row="6" Margin="0,93,0,0"
+                  VerticalAlignment="Top"/>
+
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="7" Text="Номер дома" Margin="0,93,0,0"/>
+        <TextBox x:Name="TBHousNum" Grid.Column="4" Grid.Row="7" Margin="0,93,0,0" FontSize="20"/>
+
+        <TextBlock FontSize="20" Grid.Column="5" Grid.Row="4" Text="Улица" Margin="0,93,0,0"/>
+        <TextBox x:Name="TBStreet" Grid.Column="6" Grid.Row="4" Margin="0,93,0,0"/>
+
+        <TextBlock FontSize="20" Grid.Column="5" Grid.Row="5" Text="Город" Margin="0,93,0,0"/>
+        <TextBox x:Name="TBCity" Grid.Column="6" Grid.Row="5" Margin="0,93,0,0"/>
+
+        <TextBlock FontSize="20" Grid.Column="5" Grid.Row="6" Text="Страна" Margin="0,93,0,0"/>
+        <ComboBox x:Name="cbContry" Grid.Column="6" Grid.Row="6" Margin="0,93,0,0"/>
+
+        <Button Grid.Column="3" Grid.Row="9"  Margin="123,49,123,49"
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" 
+                Click="AddKassa_Click" Grid.ColumnSpan="2">
             ДОБАВИТЬ
         </Button>
 

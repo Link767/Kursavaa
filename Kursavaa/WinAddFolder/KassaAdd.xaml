@@ -34,9 +34,10 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <Button Grid.Column="1" Grid.Row="8"  Margin="106,49,140,49"
+        <Button Grid.Column="3" Grid.Row="8"  Margin="106,49,140,49"
                 materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
-                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="AddKassa_Click" Grid.ColumnSpan="2">
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="AddKassa_Click" 
+                Grid.ColumnSpan="2">
             ДОБАВИТЬ
         </Button>
 

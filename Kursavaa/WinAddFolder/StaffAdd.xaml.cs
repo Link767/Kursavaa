@@ -40,6 +40,7 @@ namespace Kursavaa.WinAddFolder
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             classCB.LoadGender(cbGender);
+            classCB.LoadMaritalStatus(cdMaritalStatus);
         }
     }
 }

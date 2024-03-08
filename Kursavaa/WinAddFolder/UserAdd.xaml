@@ -60,9 +60,9 @@
 
 
         <Button Grid.Column="1" Grid.Row="10"  Margin="123,38,123,60"
-    materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
-    Style="{StaticResource MaterialDesignRaisedDarkButton}" 
-    Grid.ColumnSpan="2" Click="Button_Click">
+            materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+            Style="{StaticResource MaterialDesignRaisedDarkButton}" 
+            Grid.ColumnSpan="2" Click="Button_Click">
             ДОБАВИТЬ
         </Button>
 
