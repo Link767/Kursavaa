@@ -34,15 +34,18 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="TBProName"
-                 Grid.Row="4" Grid.Column="1"/>
+        <TextBox x:Name="TBProName" Text="Имя продукта"
+                 Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0,90,0,0"
+                 Grid.ColumnSpan="4"/>
 
         <TextBox x:Name="TBCost"
-         Grid.Row="5" Grid.Column="1"/>
+         Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0,90,0,0"  Text="Цена продукта"
+                 Grid.ColumnSpan="4"/>
 
-        <Button Grid.Column="1" Grid.Row="8"  Margin="106,49,140,49"
+        <Button Grid.Column="3" Grid.Row="8"  Margin="124,50,124,50"
          materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
-         Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="AddKassa_Click" Grid.ColumnSpan="2">
+         Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="AddKassa_Click" 
+                Grid.ColumnSpan="2">
             ДОБАВИТЬ
         </Button>
     </Grid>

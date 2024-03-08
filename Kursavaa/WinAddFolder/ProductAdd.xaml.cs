@@ -36,28 +36,56 @@ namespace Kursavaa.WinAddFolder
 
         private void AddKassa_Click(object sender, RoutedEventArgs e)
         {
-            // Добавление Года
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Insert into dbo.[Produkt] " +
+            try 
+            { 
+
+                // Добавление Года
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("Insert into dbo.[Produkt] " +
                 "(ProduktName, Cost) " +
                 "Values " +
                 "(@ProduktName, @Cost)", sqlConnection);
 
-            sqlCommand.Parameters.AddWithValue("ProduktName", TBProName.Text);
-            sqlCommand.Parameters.AddWithValue("Cost", TBCost.Text);
-            sqlCommand.ExecuteNonQuery();
+                sqlCommand.Parameters.AddWithValue("ProduktName", TBProName.Text);
+                sqlCommand.Parameters.AddWithValue("Cost", TBCost.Text);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnection.Close();
 
-            //получение Года
-            sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
+                //получение Года
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
                $"where ProduktName = {TBProName.Text}", sqlConnection);
+                sqlConnection.Close();
 
-            sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
+
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
                $"where Cost = {TBCost.Text}", sqlConnection);
+            
 
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdProdukt = dataReader[0].ToString();
-            dataReader.Close();
+                dataReader = sqlCommand.ExecuteReader();
+                dataReader.Read();
+                IdProdukt = dataReader[0].ToString();
+                dataReader.Close();
+
+            
+
+                MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                Product product = new Product();
+                product.Show();
+                this.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
