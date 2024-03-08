@@ -4,47 +4,43 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="f0e26c12f8a647c0a0f33b5e4910f19a" Name="Diagram1">
-        <EntityTypeShape EntityType="KursavaaModel.Address" Width="1.5" PointX="1.5" PointY="20" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Birthday" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Contry" Width="1.5" PointX="1.5" PointY="29.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.ENN" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Gender" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Gity" Width="1.5" PointX="1.5" PointY="26.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Kassa" Width="1.5" PointX="10.5" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Manager" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.MaritalStatus" Width="1.5" PointX="0.75" PointY="14.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Month" Width="1.5" PointX="1.5" PointY="8.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Passport" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Point" Width="1.5" PointX="12.75" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Produkt" Width="1.5" PointX="12.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Role" Width="1.5" PointX="3.75" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Staff" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Status" Width="1.5" PointX="12.75" PointY="8" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Street" Width="1.5" PointX="1.5" PointY="23.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.sysdiagrams" Width="1.5" PointX="8.75" PointY="8.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.UnitCode" Width="1.5" PointX="0.75" PointY="17.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.User" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Year" Width="1.5" PointX="1.5" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.Zakaz" Width="1.5" PointX="15" PointY="4.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.ViewKassa" Width="1.5" PointX="8.75" PointY="11.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.ViewPoint" Width="1.5" PointX="10.75" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.ViewProd" Width="1.5" PointX="2.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.ViewProduct" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.ViewStaff" Width="1.5" PointX="5.75" PointY="12.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="KursavaaModel.ViewUser" Width="1.5" PointX="12.75" PointY="10.375" IsExpanded="true" />
+      <Diagram DiagramId="10d46ac7bfe04423bac552599ac8d121" Name="Diagram1">
+        <EntityTypeShape EntityType="KursavaaModel.Address" Width="1.5" PointX="1.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Birthday" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Contry" Width="1.5" PointX="1.5" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.ENN" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Gender" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Gity" Width="1.5" PointX="1.5" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Kassa" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Manager" Width="1.5" PointX="6" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.MaritalStatus" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Month" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Passport" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Point" Width="1.5" PointX="9.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Produkt" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Role" Width="1.5" PointX="3.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Staff" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Status" Width="1.5" PointX="9.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Street" Width="1.5" PointX="1.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.UnitCode" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.User" Width="1.5" PointX="9.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Year" Width="1.5" PointX="3.75" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.Zakaz" Width="1.5" PointX="12" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.ViewKassa" Width="1.5" PointX="11.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.ViewPoint" Width="1.5" PointX="11.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.ViewProd" Width="1.5" PointX="13.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.ViewProduct" Width="1.5" PointX="13.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.ViewStaff" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KursavaaModel.ViewUser" Width="1.5" PointX="13.75" PointY="12.75" IsExpanded="true" />
         <AssociationConnector Association="KursavaaModel.FK_Address_Street" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Kassa_Address" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Point_Address" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_UnitCode_Address" ManuallyRouted="false" />
-        <AssociationConnector Association="KursavaaModel.FK_Birthday_Month" ManuallyRouted="false" />
-        <AssociationConnector Association="KursavaaModel.FK_Passport_Birthday" ManuallyRouted="false" />
-        <AssociationConnector Association="KursavaaModel.FK_User_Birthday" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Gity_Contry" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Staff_ENN" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Passport_Gender" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Staff_Gender" ManuallyRouted="false" />
-        <AssociationConnector Association="KursavaaModel.FK_User_Gender" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Street_Gity" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Kassa_Staff" ManuallyRouted="false" />
         <AssociationConnector Association="KursavaaModel.FK_Point_Kassa" ManuallyRouted="false" />

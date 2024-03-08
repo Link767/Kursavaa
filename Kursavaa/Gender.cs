@@ -19,7 +19,6 @@ namespace Kursavaa
         {
             this.Passport = new HashSet<Passport>();
             this.Staff = new HashSet<Staff>();
-            this.User = new HashSet<User>();
         }
     
         public int IdGender { get; set; }
@@ -29,7 +28,5 @@ namespace Kursavaa
         public virtual ICollection<Passport> Passport { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Staff> Staff { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> User { get; set; }
     }
 }

@@ -14,18 +14,10 @@ namespace Kursavaa
     
     public partial class Month
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Month()
-        {
-            this.Birthday = new HashSet<Birthday>();
-        }
-    
         public int IdMonth { get; set; }
         public string MonthName { get; set; }
         public int IdYear { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Birthday> Birthday { get; set; }
         public virtual Year Year { get; set; }
     }
 }

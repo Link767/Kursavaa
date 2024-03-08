@@ -29,7 +29,6 @@ namespace Kursavaa
         public int IdGender { get; set; }
         public int IdBirthday { get; set; }
     
-        public virtual Birthday Birthday { get; set; }
         public virtual Gender Gender { get; set; }
         public virtual MaritalStatus MaritalStatus { get; set; }
         public virtual UnitCode UnitCode { get; set; }

@@ -14,21 +14,8 @@ namespace Kursavaa
     
     public partial class Birthday
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Birthday()
-        {
-            this.Passport = new HashSet<Passport>();
-            this.User = new HashSet<User>();
-        }
-    
         public int IdBirthday { get; set; }
         public int Day { get; set; }
         public int IdMonth { get; set; }
-    
-        public virtual Month Month { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Passport> Passport { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> User { get; set; }
     }
 }

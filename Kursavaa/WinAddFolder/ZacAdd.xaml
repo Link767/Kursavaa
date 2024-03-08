@@ -36,26 +36,18 @@
 
         <TextBlock Grid.Column="1" Grid.Row="4" FontSize="20" Margin="0,92,0,0"
                    Text="Название продукта"/>
-        <TextBox x:Name="TdProdName" Grid.Column="2" Grid.Row="4" Margin="0,92,0,0"
+        <ComboBox x:Name="сdProdName" Grid.Column="2" Grid.Row="4" Margin="0,92,0,0"
                  Text="Название продукта"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="5" FontSize="20" Margin="0,92,0,0" Text="Цена"/>
-        <TextBox x:Name="TdCost" Grid.Column="2" Grid.Row="5" Margin="0,92,0,0"
-         Text="Цена продукта"/>
-
-        <TextBlock Grid.Column="1" Grid.Row="6" FontSize="20" Margin="0,92,0,0" Text="Имя закащика"/>
-        <TextBox x:Name="TdUserName" Grid.Column="2" Grid.Row="6" Margin="0,92,0,0"
-                Text="Имя закащика"/>
-
-        <TextBlock Grid.Column="1" Grid.Row="7" FontSize="20" Margin="0,92,0,0" Text="Фамиля Закащика"/>
-        <TextBox x:Name="TdSurname" Grid.Column="2" Grid.Row="7" Margin="0,92,0,0"
+        <TextBlock Grid.Column="1" Grid.Row="5" FontSize="20" Margin="0,92,0,0" Text="Фамиля Закащика"/>
+        <ComboBox x:Name="cbUserSurname" Grid.Column="2" Grid.Row="5" Margin="0,92,0,0"
         Text="Фамилия закащика"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="8" FontSize="20" Margin="0,92,0,0" Text="Название точки"/>
-        <ComboBox x:Name="cbPoint" Grid.Column="2" Grid.Row="8" Margin="0,92,0,0"/>
+        <TextBlock Grid.Column="1" Grid.Row="6" FontSize="20" Margin="0,92,0,0" Text="Название точки"/>
+        <ComboBox x:Name="cbPoint" Grid.Column="2" Grid.Row="6" Margin="0,92,0,0"/>
         
-        <TextBlock Grid.Column="1" Grid.Row="9" FontSize="20" Margin="0,92,0,0" Text="Статус заказа"/>
-        <ComboBox x:Name="cbStatus" Grid.Column="2" Grid.Row="9" Margin="0,92,0,0"/>
+        <TextBlock Grid.Column="1" Grid.Row="7" FontSize="20" Margin="0,92,0,0" Text="Статус заказа"/>
+        <ComboBox x:Name="cbStatus" Grid.Column="2" Grid.Row="7" Margin="0,92,0,0"/>
 
         <Button Grid.Column="1" Grid.Row="10"  Margin="123,38,123,60"
         materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"

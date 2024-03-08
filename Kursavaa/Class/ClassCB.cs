@@ -256,5 +256,101 @@ namespace Kursavaa.Class
                 sqlConnection.Close();
             }
         }
+
+        public void LoadProduktName(ComboBox dProdName)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdProdukt, " +
+                    "ProduktName FROM dbo.[Produkt] Order by IdProdukt ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[Produkt]");
+                dProdName.ItemsSource = dataSet.Tables["[Produkt]"].DefaultView;
+                dProdName.DisplayMemberPath = dataSet.Tables["[Produkt]"].Columns["ProduktName"].ToString();
+                dProdName.SelectedValuePath = dataSet.Tables["[Produkt]"].Columns["IdProdukt"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void LoadProduktCost(ComboBox cbCost)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdProdukt, " +
+                    "Cost FROM dbo.[Produkt] Order by IdProdukt ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[Produkt]");
+                cbCost.ItemsSource = dataSet.Tables["[Produkt]"].DefaultView;
+                cbCost.DisplayMemberPath = dataSet.Tables["[Produkt]"].Columns["Cost"].ToString();
+                cbCost.SelectedValuePath = dataSet.Tables["[Produkt]"].Columns["IdProdukt"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void LoadUserName(ComboBox cbUserName)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdUser, " +
+                    "Name FROM dbo.[User] Order by IdUser ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[User]");
+                cbUserName.ItemsSource = dataSet.Tables["[User]"].DefaultView;
+                cbUserName.DisplayMemberPath = dataSet.Tables["[User]"].Columns["Name"].ToString();
+                cbUserName.SelectedValuePath = dataSet.Tables["[User]"].Columns["IdUser"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
+
+        public void LoadUserSurname(ComboBox cbUserSurname)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdUser, " +
+                    "Surname FROM dbo.[User] Order by IdUser ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[User]");
+                cbUserSurname.ItemsSource = dataSet.Tables["[User]"].DefaultView;
+                cbUserSurname.DisplayMemberPath = dataSet.Tables["[User]"].Columns["Surname"].ToString();
+                cbUserSurname.SelectedValuePath = dataSet.Tables["[User]"].Columns["IdUser"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
     }   
 }

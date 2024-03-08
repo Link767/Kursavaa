@@ -172,8 +172,8 @@
             <PropertyRef Name="IdUser" />
           </Key>
           <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Surname" Type="nvarchar" MaxLength="60" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="60" />
           <Property Name="LastName" Type="nvarchar" MaxLength="60" />
           <Property Name="Age" Type="int" />
           <Property Name="Number" Type="int" />
@@ -321,18 +321,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Birthday_Month">
-          <End Role="Month" Type="Self.Month" Multiplicity="1" />
-          <End Role="Birthday" Type="Self.Birthday" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Month">
-              <PropertyRef Name="IdMonth" />
-            </Principal>
-            <Dependent Role="Birthday">
-              <PropertyRef Name="IdMonth" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Gity_Contry">
           <End Role="Contry" Type="Self.Contry" Multiplicity="1" />
           <End Role="Gity" Type="Self.Gity" Multiplicity="*" />
@@ -390,18 +378,6 @@
             </Principal>
             <Dependent Role="Month">
               <PropertyRef Name="IdYear" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Passport_Birthday">
-          <End Role="Birthday" Type="Self.Birthday" Multiplicity="1" />
-          <End Role="Passport" Type="Self.Passport" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Birthday">
-              <PropertyRef Name="IdBirthday" />
-            </Principal>
-            <Dependent Role="Passport">
-              <PropertyRef Name="IdBirthday" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -534,30 +510,6 @@
             </Principal>
             <Dependent Role="UnitCode">
               <PropertyRef Name="IdAddress" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_Birthday">
-          <End Role="Birthday" Type="Self.Birthday" Multiplicity="0..1" />
-          <End Role="User" Type="Self.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Birthday">
-              <PropertyRef Name="IdBirthday" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="IdBirthday" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_Gender">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
-          <End Role="User" Type="Self.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gender">
-              <PropertyRef Name="IdGender" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="IdGender" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -731,10 +683,6 @@
             <End Role="Street" EntitySet="Street" />
             <End Role="Address" EntitySet="Address" />
           </AssociationSet>
-          <AssociationSet Name="FK_Birthday_Month" Association="Self.FK_Birthday_Month">
-            <End Role="Month" EntitySet="Month" />
-            <End Role="Birthday" EntitySet="Birthday" />
-          </AssociationSet>
           <AssociationSet Name="FK_Gity_Contry" Association="Self.FK_Gity_Contry">
             <End Role="Contry" EntitySet="Contry" />
             <End Role="Gity" EntitySet="Gity" />
@@ -754,10 +702,6 @@
           <AssociationSet Name="FK_Month_Year" Association="Self.FK_Month_Year">
             <End Role="Year" EntitySet="Year" />
             <End Role="Month" EntitySet="Month" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Passport_Birthday" Association="Self.FK_Passport_Birthday">
-            <End Role="Birthday" EntitySet="Birthday" />
-            <End Role="Passport" EntitySet="Passport" />
           </AssociationSet>
           <AssociationSet Name="FK_Passport_Gender" Association="Self.FK_Passport_Gender">
             <End Role="Gender" EntitySet="Gender" />
@@ -803,14 +747,6 @@
             <End Role="Address" EntitySet="Address" />
             <End Role="UnitCode" EntitySet="UnitCode" />
           </AssociationSet>
-          <AssociationSet Name="FK_User_Birthday" Association="Self.FK_User_Birthday">
-            <End Role="Birthday" EntitySet="Birthday" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Gender" Association="Self.FK_User_Gender">
-            <End Role="Gender" EntitySet="Gender" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
           <AssociationSet Name="FK_Zakaz_Point" Association="Self.FK_Zakaz_Point">
             <End Role="Point" EntitySet="Point" />
             <End Role="Zakaz" EntitySet="Zakaz" />
@@ -852,9 +788,6 @@
           <Property Name="IdBirthday" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Day" Type="Int32" Nullable="false" />
           <Property Name="IdMonth" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Month" Relationship="Self.FK_Birthday_Month" FromRole="Birthday" ToRole="Month" />
-          <NavigationProperty Name="Passport" Relationship="Self.FK_Passport_Birthday" FromRole="Birthday" ToRole="Passport" />
-          <NavigationProperty Name="User" Relationship="Self.FK_User_Birthday" FromRole="Birthday" ToRole="User" />
         </EntityType>
         <EntityType Name="Contry">
           <Key>
@@ -880,7 +813,6 @@
           <Property Name="GenderName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Passport" Relationship="Self.FK_Passport_Gender" FromRole="Gender" ToRole="Passport" />
           <NavigationProperty Name="Staff" Relationship="Self.FK_Staff_Gender" FromRole="Gender" ToRole="Staff" />
-          <NavigationProperty Name="User" Relationship="Self.FK_User_Gender" FromRole="Gender" ToRole="User" />
         </EntityType>
         <EntityType Name="Gity">
           <Key>
@@ -929,7 +861,6 @@
           <Property Name="IdMonth" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MonthName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="IdYear" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Birthday" Relationship="Self.FK_Birthday_Month" FromRole="Month" ToRole="Birthday" />
           <NavigationProperty Name="Year" Relationship="Self.FK_Month_Year" FromRole="Month" ToRole="Year" />
         </EntityType>
         <EntityType Name="Passport">
@@ -944,7 +875,6 @@
           <Property Name="IdMaritalStatus" Type="Int32" Nullable="false" />
           <Property Name="IdGender" Type="Int32" Nullable="false" />
           <Property Name="IdBirthday" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Birthday" Relationship="Self.FK_Passport_Birthday" FromRole="Passport" ToRole="Birthday" />
           <NavigationProperty Name="Gender" Relationship="Self.FK_Passport_Gender" FromRole="Passport" ToRole="Gender" />
           <NavigationProperty Name="MaritalStatus" Relationship="Self.FK_Passport_MaritalStatus" FromRole="Passport" ToRole="MaritalStatus" />
           <NavigationProperty Name="UnitCode" Relationship="Self.FK_Passport_UnitCode" FromRole="Passport" ToRole="UnitCode" />
@@ -1042,15 +972,13 @@
             <PropertyRef Name="IdUser" />
           </Key>
           <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Surname" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
           <Property Name="Age" Type="Int32" />
           <Property Name="Number" Type="Int32" />
           <Property Name="IdGender" Type="Int32" />
           <Property Name="IdBirthday" Type="Int32" />
-          <NavigationProperty Name="Birthday" Relationship="Self.FK_User_Birthday" FromRole="User" ToRole="Birthday" />
-          <NavigationProperty Name="Gender" Relationship="Self.FK_User_Gender" FromRole="User" ToRole="Gender" />
           <NavigationProperty Name="Zakaz" Relationship="Self.FK_Zakaz_User" FromRole="User" ToRole="Zakaz" />
         </EntityType>
         <EntityType Name="Year">
@@ -1223,42 +1151,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Birthday_Month">
-          <End Role="Month" Type="Self.Month" Multiplicity="1" />
-          <End Role="Birthday" Type="Self.Birthday" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Month">
-              <PropertyRef Name="IdMonth" />
-            </Principal>
-            <Dependent Role="Birthday">
-              <PropertyRef Name="IdMonth" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Passport_Birthday">
-          <End Role="Birthday" Type="Self.Birthday" Multiplicity="1" />
-          <End Role="Passport" Type="Self.Passport" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Birthday">
-              <PropertyRef Name="IdBirthday" />
-            </Principal>
-            <Dependent Role="Passport">
-              <PropertyRef Name="IdBirthday" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_Birthday">
-          <End Role="Birthday" Type="Self.Birthday" Multiplicity="0..1" />
-          <End Role="User" Type="Self.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Birthday">
-              <PropertyRef Name="IdBirthday" />
-            </Principal>
-            <Dependent Role="User">
-              <PropertyRef Name="IdBirthday" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Gity_Contry">
           <End Role="Contry" Type="Self.Contry" Multiplicity="1" />
           <End Role="Gity" Type="Self.Gity" Multiplicity="*" />
@@ -1303,18 +1195,6 @@
               <PropertyRef Name="IdGender" />
             </Principal>
             <Dependent Role="Staff">
-              <PropertyRef Name="IdGender" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_User_Gender">
-          <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
-          <End Role="User" Type="Self.User" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Gender">
-              <PropertyRef Name="IdGender" />
-            </Principal>
-            <Dependent Role="User">
               <PropertyRef Name="IdGender" />
             </Dependent>
           </ReferentialConstraint>
@@ -1475,7 +1355,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="KursavaaEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="KursavaaEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Address" EntityType="Self.Address" />
           <EntitySet Name="Birthday" EntityType="Self.Birthday" />
           <EntitySet Name="Contry" EntityType="Self.Contry" />
@@ -1520,18 +1400,6 @@
             <End Role="Address" EntitySet="Address" />
             <End Role="UnitCode" EntitySet="UnitCode" />
           </AssociationSet>
-          <AssociationSet Name="FK_Birthday_Month" Association="Self.FK_Birthday_Month">
-            <End Role="Month" EntitySet="Month" />
-            <End Role="Birthday" EntitySet="Birthday" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Passport_Birthday" Association="Self.FK_Passport_Birthday">
-            <End Role="Birthday" EntitySet="Birthday" />
-            <End Role="Passport" EntitySet="Passport" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Birthday" Association="Self.FK_User_Birthday">
-            <End Role="Birthday" EntitySet="Birthday" />
-            <End Role="User" EntitySet="User" />
-          </AssociationSet>
           <AssociationSet Name="FK_Gity_Contry" Association="Self.FK_Gity_Contry">
             <End Role="Contry" EntitySet="Contry" />
             <End Role="Gity" EntitySet="Gity" />
@@ -1547,10 +1415,6 @@
           <AssociationSet Name="FK_Staff_Gender" Association="Self.FK_Staff_Gender">
             <End Role="Gender" EntitySet="Gender" />
             <End Role="Staff" EntitySet="Staff" />
-          </AssociationSet>
-          <AssociationSet Name="FK_User_Gender" Association="Self.FK_User_Gender">
-            <End Role="Gender" EntitySet="Gender" />
-            <End Role="User" EntitySet="User" />
           </AssociationSet>
           <AssociationSet Name="FK_Street_Gity" Association="Self.FK_Street_Gity">
             <End Role="Gity" EntitySet="Gity" />
@@ -1651,7 +1515,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище KursavaaModelContainer" CdmEntityContainer="KursavaaEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище KursavaaModelContainer" CdmEntityContainer="KursavaaEntities2">
           <EntitySetMapping Name="Address">
             <EntityTypeMapping TypeName="KursavaaModel.Address">
               <MappingFragment StoreEntitySet="Address">

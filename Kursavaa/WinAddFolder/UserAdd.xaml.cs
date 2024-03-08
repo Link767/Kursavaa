@@ -35,6 +35,7 @@ namespace Kursavaa.WinAddFolder
             InitializeComponent();
             classCB = new ClassCB();
             users = new Users();
+           
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -42,26 +43,31 @@ namespace Kursavaa.WinAddFolder
             // Добавление Года
             sqlConnection.Open();
             sqlCommand = new SqlCommand("Insert into dbo.[Year] " +
-                "(YearName,) " +
-                "Values " +
-                "(@YearName)" , sqlConnection);
+            "(YearName) " +
+            "Values " +
+            "(@YearName)", sqlConnection);
 
             sqlCommand.Parameters.AddWithValue("YearName", TBYear.Text);
             sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
 
             //получение Года
+            sqlConnection.Open();
             sqlCommand = new SqlCommand("Select IdYear from dbo.Year " +
                $"where YearName = {TBYear.Text}", sqlConnection);
+           
+
             dataReader = sqlCommand.ExecuteReader();
             dataReader.Read();
             IdYear = dataReader[0].ToString();
             dataReader.Close();
+            sqlConnection.Close();
 
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             // Добавление Дня
-
+            sqlConnection.Open();
             sqlCommand = new SqlCommand("Insert into dbo.[Birthday] " +
                 "(Day, IdMonth) " +
                 "Values " +
@@ -71,18 +77,22 @@ namespace Kursavaa.WinAddFolder
             sqlCommand.Parameters.AddWithValue("Day", Day.Text);
             sqlCommand.Parameters.AddWithValue("IdMonth", cdMonth.SelectedValue.ToString());
             sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
 
             //получение Дня
+            sqlConnection.Open();
             sqlCommand = new SqlCommand("Select IdBirthday from dbo.Birthday " +
                $"where Day = {Day.Text}", sqlConnection);
             dataReader = sqlCommand.ExecuteReader();
             dataReader.Read();
             IdBirthday = dataReader[0].ToString();
             dataReader.Close();
+            sqlConnection.Close();
 
             ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
+
             // Добавление User
+            sqlConnection.Open();
             sqlCommand = new SqlCommand("Insert into dbo.[User] " +
                 "(Name, Surname, LastName, Number, IdGender, IdBirthday) " +
                 "Values " +
@@ -92,26 +102,39 @@ namespace Kursavaa.WinAddFolder
             sqlCommand.Parameters.AddWithValue("Surname", TBSurname.Text);
             sqlCommand.Parameters.AddWithValue("LastName", TBLastName.Text);
             sqlCommand.Parameters.AddWithValue("Number", Num.Text);
+            sqlCommand.Parameters.AddWithValue("Day", Day.Text);
             sqlCommand.Parameters.AddWithValue("IdGender", cdGender.SelectedValue.ToString());
             sqlCommand.Parameters.AddWithValue("IdBirthday", cdMonth.SelectedValue.ToString());
             sqlCommand.ExecuteNonQuery();
+            sqlConnection.Close();
 
             //получение User
+            sqlConnection.Open();
             sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
                $"where Name = {TBName.Text}", sqlConnection);
+            sqlConnection.Close();
 
+            sqlConnection.Open();
             sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
                $"where Surname = {TBSurname.Text}", sqlConnection);
+            sqlConnection.Close();
 
+            sqlConnection.Open();
             sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
                $"where LastName = {TBLastName.Text}", sqlConnection);
+            sqlConnection.Close();
 
+            sqlConnection.Open();
             sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
                $"where Number = {Num.Text}", sqlConnection);
+
             dataReader = sqlCommand.ExecuteReader();
             dataReader.Read();
             IdUser = dataReader[0].ToString();
             dataReader.Close();
+            sqlConnection.Close();
+
+
 
         }
 

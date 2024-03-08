@@ -15,10 +15,10 @@ namespace Kursavaa
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class KursavaaEntities : DbContext
+    public partial class KursavaaEntities2 : DbContext
     {
-        public KursavaaEntities()
-            : base("name=KursavaaEntities")
+        public KursavaaEntities2()
+            : base("name=KursavaaEntities2")
         {
         }
     

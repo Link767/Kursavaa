@@ -36,74 +36,48 @@ namespace Kursavaa.WinAddFolder
             zac = new Zac();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+       private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // Добавление продукта
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Insert into dbo.[Produkt] " +
-                "(ProduktName, Cost) " +
-                "Values " +
-                "(@ProduktName, @Cost)", sqlConnection);
+            try { 
 
-            sqlCommand.Parameters.AddWithValue("ProduktName", TdProdName.Text);
-            sqlCommand.Parameters.AddWithValue("Cost", TdCost.Text);
-            sqlCommand.ExecuteNonQuery();
+                // Добавление Zac
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("Insert into dbo.[Zakaz] " +
+                    "(IdProdukt, IdUser, IdPoint, IdStatus) " +
+                    "Values " +
+                    "(@IdProdukt, @IdUser, @IdPoint, @IdStatus)", sqlConnection);
 
-            //получение IdProdukt
-            sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
-               $"where ProduktName = {TdProdName.Text}", sqlConnection);
+                    sqlCommand.Parameters.AddWithValue("IdUser", cbUserSurname.SelectedValue.ToString());
+                    sqlCommand.Parameters.AddWithValue("IdProdukt", сdProdName.SelectedValue.ToString());
+                    sqlCommand.Parameters.AddWithValue("IdPoint", cbPoint.SelectedValue.ToString());
+                    sqlCommand.Parameters.AddWithValue("IdStatus", cbStatus.SelectedValue.ToString());
+            
+                    sqlCommand.ExecuteNonQuery();
 
-            sqlCommand = new SqlCommand("Select IdProdukt from dbo.Produkt " +
-               $"where Cost = {TdCost.Text}", sqlConnection);
+                MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
 
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdProdukt = dataReader[0].ToString();
-            dataReader.Close();
+                Zac zac = new Zac();
+                zac.Show();
+                this.Close();
 
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            }
 
-            // Добавление User
-            sqlCommand = new SqlCommand("Insert into dbo.[User] " +
-                 "(Name, Surname) " +
-                 "Values " +
-                 "(@Name, @Surname)", sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("Name", TdUserName.Text);
-            sqlCommand.Parameters.AddWithValue("Surname", TdSurname.Text);
-            sqlCommand.ExecuteNonQuery();
-
-            //получение IdUser
-            sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
-               $"where Name = {TdProdName.Text}", sqlConnection);
-
-            sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
-               $"where Surname = {TdCost.Text}", sqlConnection);
-
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdUser = dataReader[0].ToString();
-            dataReader.Close();
-
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            // Добавление Zac
-            sqlCommand = new SqlCommand("Insert into dbo.[Zakaz] " +
-                "(IdProdukt, IdUser) " +
-                "Values " +
-                "(@IdProdukt, @IdUser)", sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("IdProdukt", IdProdukt.ToString());
-            sqlCommand.Parameters.AddWithValue("IdUser", IdUser.ToString());
-            sqlCommand.ExecuteNonQuery();
-
-            Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             classCB.LoadStatus(cbStatus);
             classCB.LoadPoint(cbPoint);
+            classCB.LoadProduktName(сdProdName);
+            classCB.LoadUserSurname(cbUserSurname);
         }
     }
 }
