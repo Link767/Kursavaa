@@ -352,5 +352,29 @@ namespace Kursavaa.Class
                 sqlConnection.Close();
             }
         }
+
+        public void LoadContry(ComboBox cbContry)
+        {
+            try
+            {
+                sqlConnection.Open();
+                dataAdapter = new SqlDataAdapter("SELECT IdContry, " +
+                    "ContryName FROM dbo.[Contry] Order by IdContry ASC",
+                    sqlConnection);
+                dataSet = new DataSet();
+                dataAdapter.Fill(dataSet, "[Contry]");
+                cbContry.ItemsSource = dataSet.Tables["[Contry]"].DefaultView;
+                cbContry.DisplayMemberPath = dataSet.Tables["[Contry]"].Columns["ContryName"].ToString();
+                cbContry.SelectedValuePath = dataSet.Tables["[Contry]"].Columns["IdContry"].ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+        }
     }   
 }

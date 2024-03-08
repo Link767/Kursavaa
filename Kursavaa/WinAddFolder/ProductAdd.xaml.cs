@@ -38,7 +38,6 @@ namespace Kursavaa.WinAddFolder
         {
             try 
             {
-
                 // Добавление Produkt
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand("Insert into dbo.[Produkt] " +
