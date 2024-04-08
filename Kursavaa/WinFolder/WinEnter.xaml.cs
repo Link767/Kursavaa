@@ -16,7 +16,7 @@ namespace Kursavaa.WinFolder
 {
     public partial class WinEnter : Window {
         public WinEnter() {
-            InitializeComponent();
+            InitializeComponent();      
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e) {

@@ -43,8 +43,9 @@
 
         <materialDesign:Card Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6">
             <Menu
-            materialDesign:MenuAssist.TopLevelMenuItemHeight="{Binding RelativeSource={RelativeSource FindAncestor,
-            AncestorType={x:Type materialDesign:Card}}, Path=ActualHeight}">
+            materialDesign:MenuAssist.TopLevelMenuItemHeight="{Binding 
+                RelativeSource={RelativeSource FindAncestor,
+                AncestorType={x:Type materialDesign:Card}}, Path=ActualHeight}">
                 <MenuItem
                 Header="Таблицы">
                     <MenuItem
