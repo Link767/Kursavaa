@@ -29,6 +29,7 @@ namespace Kursavaa.WinAddFolder
 
         public static string IdCity {  get; set; }
         public static string IdStreet { get; set; }
+        public static string IdAddres { get; set; }
         public StaffAdd()
         {
             InitializeComponent();
@@ -61,6 +62,7 @@ namespace Kursavaa.WinAddFolder
             
             sqlConnection.Close();
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
             // Добавление улицы
             sqlConnection.Open();
             sqlCommand = new SqlCommand("Insert into dbo.[Street] " +
@@ -82,6 +84,31 @@ namespace Kursavaa.WinAddFolder
             dataReader.Close();
 
             sqlConnection.Close();
+
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            
+            // Добавление Adresa
+            sqlConnection.Open();
+            sqlCommand = new SqlCommand("Insert into dbo.[Addres] " +
+                "(HousNumber, IdStreet) " +
+                "Values " +
+                "(@HousNumber, " +
+            "@IdStreet)", sqlConnection);
+
+            sqlCommand.Parameters.AddWithValue("HousNumber", TBHousNum.Text);
+            sqlCommand.ExecuteNonQuery();
+
+            //получение Adres
+            sqlCommand = new SqlCommand("Select IdAddres from dbo.Addres " +
+               $"where HousNumber = {TBHousNum.Text}", sqlConnection);
+
+            dataReader = sqlCommand.ExecuteReader();
+            dataReader.Read();
+            IdAddres = dataReader[0].ToString();
+            dataReader.Close();
+
+            sqlConnection.Close();
+
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }
 

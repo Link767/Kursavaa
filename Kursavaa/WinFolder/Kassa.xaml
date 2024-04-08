@@ -7,7 +7,16 @@
         xmlns:local="clr-namespace:Kursavaa.WinFolder"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Касса" Height="1024" Width="1440" Background="#669E85">
+        Title="Касса" Height="828" Width="950">
+    <Window.Icon>
+        <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
+    </Window.Icon>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF7D256F" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -29,12 +38,10 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <materialDesign:Card Grid.Row="4" Grid.Column="1" Margin="0,0,0,91" Grid.ColumnSpan="6">
+        <materialDesign:Card Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="6">
             <Menu
             materialDesign:MenuAssist.TopLevelMenuItemHeight="{Binding RelativeSource={RelativeSource FindAncestor,
             AncestorType={x:Type materialDesign:Card}}, Path=ActualHeight}">
@@ -59,25 +66,25 @@
             </Menu>
         </materialDesign:Card>
 
-        <Button Grid.Column="1" Grid.Row="9"  Margin="50,49,50,49"
+        <Button Grid.Column="1" Grid.Row="8"  Margin="14,28,14,70"
         materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
         Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
             ДОБАВИТЬ
         </Button>
 
-        <Button Grid.Column="6" Grid.Row="9"  Margin="50,49,50,49"
+        <Button Grid.Column="6" Grid.Row="8" Margin="14,28,14,70"
         materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
         Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click_1">
             УДАЛИТЬ
         </Button>
 
-        <Button Grid.Column="3" Grid.Row="9" Grid.ColumnSpan="2" Margin="169,49,169,49"
+        <Button Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="2" Margin="77,28,78,70"
         materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
         Style="{StaticResource MaterialDesignRaisedDarkButton}">
             ИЗМЕНИТЬ
         </Button>
-        
-        <DataGrid x:Name="DgKassa" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" 
+
+        <DataGrid x:Name="DgKassa" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="6" 
                   Margin="0,0,0,128" Grid.RowSpan="5" Loaded="DGKassa_Loaded"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>

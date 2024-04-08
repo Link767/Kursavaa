@@ -14,18 +14,12 @@ using System.Windows.Shapes;
 
 namespace Kursavaa.WinFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для WinEnter.xaml
-    /// </summary>
-    public partial class WinEnter : Window
-    {
-        public WinEnter()
-        {
+    public partial class WinEnter : Window {
+        public WinEnter() {
             InitializeComponent();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
+        private void Button_Click_1(object sender, RoutedEventArgs e) {
             LK lK = new LK();
             lK.Show();
             this.Close();

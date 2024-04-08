@@ -7,9 +7,17 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Вход" Height="1024" Width="1440" Background="#669E85">
+        Title="Вход" Height="600" Width="540">
+    <Window.Icon>
+        <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
+    </Window.Icon>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF7D256F" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
             <ColumnDefinition/>
@@ -27,44 +35,34 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <Rectangle RadiusX="50" RadiusY="50" 
-           Opacity="0.7" Margin="152,71,0,0" 
-           VerticalAlignment="Top" HorizontalAlignment="Left" 
-           Width="1150" Height="526" 
-           Fill="#FC2847"
-           Grid.Column="1" Grid.ColumnSpan="6" Grid.RowSpan="5" Grid.Row="3"/>
-
-        <TextBlock TextAlignment="Center" Text="Учет WB" 
-           Margin="31,82,32,0" VerticalAlignment="Top" Height="113" 
-           Foreground="White" FontSize="100" Grid.Column="3" Grid.ColumnSpan="2"
-           Grid.RowSpan="2" Grid.Row="2" />
+        <TextBlock TextAlignment="Center" Text="WB Партнеры" VerticalAlignment="Top" Height="64" 
+           Foreground="White" FontSize="35" Grid.Column="2" 
+           Grid.ColumnSpan="4" Grid.Row="2" Margin="1,66,0,0" />
 
         <TextBlock TextAlignment="Center" 
-           Text="Sing In"  
-           Margin="112,102,0,0" 
+           Text="Вход"  
+           Margin="37,79,0,0" 
            VerticalAlignment="Top" HorizontalAlignment="Left" 
-           Width="143" Height="50" Foreground="White" FontSize="36" 
-           Grid.Column="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="4" />
+           Width="95" Height="50" Foreground="White" FontSize="36" 
+           Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="3" />
 
         <TextBlock TextAlignment="Center" 
-           Text="Логин:" Margin="107,44,0,0" 
+           Text="Логин:" Margin="4,13,0,0" 
            VerticalAlignment="Top" HorizontalAlignment="Left" 
-           Width="92" Height="23" Foreground="White" FontSize="18" Grid.Column="3" Grid.Row="5" />
+           Width="92" Height="22" Foreground="White" FontSize="18" 
+           Grid.Column="2" Grid.Row="4" />
 
         <TextBlock TextAlignment="Center" 
-           Text="Пароль:" Margin="107,76,0,0" 
-           VerticalAlignment="Top" 
+           Text="Пароль:" 
+           VerticalAlignment="Center" 
            HorizontalAlignment="Left" 
-           Width="86" Height="23" Foreground="White" FontSize="18" Grid.Column="3" Grid.Row="5" />
+           Width="89" Height="24" Foreground="White" FontSize="18" 
+           Grid.Column="2" Grid.Row="4" Margin="12,0,0,0" Grid.ColumnSpan="2" />
 
-        <Button
-         Margin="225,114,112,114"
+        <Button Margin="32,111,28,117"
          materialDesign:ButtonProgressAssist.IsIndeterminate="True"
          materialDesign:ButtonProgressAssist.IsIndicatorVisible="True"
          materialDesign:ButtonProgressAssist.Value="-1"
@@ -72,14 +70,13 @@
          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, 
          AncestorType=Window}}"
          Style="{StaticResource MaterialDesignOutlinedButton}" Click="Button_Click_1" 
-        Cursor="Hand" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+         Cursor="Hand" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" />
 
-        <TextBox Grid.Column="3" Grid.ColumnSpan="2" HorizontalAlignment="Left" 
-             Margin="200,38,0,0" Grid.Row="5" TextWrapping="Wrap" 
-             VerticalAlignment="Top" Width="219"/>
+        <TextBox Grid.Column="3" HorizontalAlignment="Left" Foreground="White"
+             Margin="23,8,0,0" Grid.Row="4" TextWrapping="Wrap" 
+             VerticalAlignment="Top" Width="148" BorderBrush="#89FFFFFF" Grid.ColumnSpan="2"/>
 
-        <PasswordBox Grid.Column="3" HorizontalAlignment="Left" 
-                 Margin="199,71,0,0" Grid.Row="5" VerticalAlignment="Top" 
-                 Width="219" Grid.ColumnSpan="2"/>
+        <PasswordBox Grid.Column="3" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" 
+             Width="148" BorderBrush="#89FFFFFF" Grid.ColumnSpan="2" Margin="23,0,0,0"/>
     </Grid>
 </Window>

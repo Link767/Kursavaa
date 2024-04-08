@@ -7,7 +7,16 @@
         xmlns:local="clr-namespace:Kursavaa.WinAddFolder"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-    Title="Клиенты добавление" Height="1024" Width="1440" Background="#669E85" Loaded="UserAdd_loaded">
+    Title="Клиенты добавление" Height="655" Width="888" Loaded="UserAdd_loaded">
+    <Window.Icon>
+        <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
+    </Window.Icon>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF7D256F" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -34,35 +43,51 @@
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="4" Text="Имя" Margin="0,92,0,0"/>
-        <TextBox  x:Name="TBName" Grid.Column="2" Grid.Row="4" Margin="0,92,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="1" 
+                   Grid.Row="2" Text="Имя" Margin="4,0,140,2" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBox  x:Name="TBName" Grid.Column="1" 
+                  Grid.Row="2" Margin="98,0,141,2" Grid.ColumnSpan="3" BorderBrush="#89FFFFFF"/>
 
-        <TextBlock FontSize="20" Grid.Row="5" Text="Фамилия" Margin="0,92,0,0" Grid.Column="1"/>
-        <TextBox x:Name="TBSurname" Grid.Column="2" Grid.Row="5" Margin="0,92,0,0"/>
+        <TextBlock FontSize="20" Grid.Row="4" Text="Фамилия" 
+                   Margin="4,50,140,42" Grid.Column="1" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TBSurname" Grid.Column="1" 
+                 Grid.Row="4" Margin="98,50,141,42" Grid.ColumnSpan="3" BorderBrush="#89FFFFFF"/>
 
-        <TextBlock FontSize="20" Grid.Row="6" Text="Отчество" Margin="0,92,0,0" Grid.Column="1"/>
-        <TextBox x:Name="TBLastName" Grid.Column="2" Grid.Row="6" Margin="0,92,0,0"/>
+        <TextBlock FontSize="20" Grid.Row="5" Text="Отчество" 
+                   Margin="4,50,140,42" Grid.Column="1" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TBLastName" Grid.Column="1" 
+                 Grid.Row="5" Margin="98,50,141,42" Grid.ColumnSpan="3" BorderBrush="#89FFFFFF"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="7" Text="Номер" Margin="0,92,0,0"/>
-        <TextBox x:Name="Num" Grid.Column="2" Grid.Row="7" Margin="0,92,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="6" 
+                   Text="Номер" Margin="4,50,140,42" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Num" Grid.Column="1" Grid.Row="6" 
+                 Margin="110,50,141,42" Grid.ColumnSpan="3" BorderBrush="#89FFFFFF"/>
 
-        <TextBlock FontSize="20" Grid.Column="1" Grid.Row="8" Text="Пол" Margin="0,92,0,0"/>
-        <ComboBox Name="cdGender" Grid.Column="2" Grid.Row="8" Margin="0,92,10,0" VerticalAlignment="Top"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="6" 
+                   Text="Пол" Margin="92,49,136,43" Foreground="White" Grid.ColumnSpan="2"/>
+        <ComboBox Name="cdGender" Grid.Column="4" Grid.Row="6" 
+                  Margin="19,0,99,0" Grid.ColumnSpan="2" BorderBrush="#89FFFFFF"/>
 
-        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="4" Text="День" Margin="0,92,0,0"/>
-        <TextBox x:Name="Day" Grid.Column="4" Grid.Row="4" Margin="0,92,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="2" 
+                   Text="День" Margin="93,0,52,2" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="Day" Grid.Column="4" Grid.Row="2" 
+                 Margin="19,0,89,2" Grid.ColumnSpan="2" BorderBrush="#89FFFFFF"/>
 
-        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="5" Text="Месяц" Margin="0,92,0,0"/>
-        <ComboBox x:Name="cdMonth" Grid.Column="4" Grid.Row="5" Margin="0,99,10,0" VerticalAlignment="Top"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="4" 
+                   Text="Месяц" Margin="93,50,52,42" Foreground="White" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="cdMonth" Grid.Column="4" Grid.Row="4" 
+                  Margin="19,0,101,0" Grid.ColumnSpan="2" BorderBrush="#89FFFFFF"/>
 
-        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="6" Text="Год" Margin="0,92,0,0"/>
-        <TextBox x:Name="TBYear" Grid.Column="4" Grid.Row="6" Margin="0,92,0,0"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="5" 
+                   Text="Год" Margin="93,50,52,42" Foreground="White" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TBYear" Grid.Column="4" Grid.Row="5" 
+                 Margin="13,45,95,47" Grid.ColumnSpan="2" BorderBrush="#89FFFFFF"/>
 
 
-        <Button Grid.Column="1" Grid.Row="10"  Margin="123,38,123,60"
+        <Button Grid.Column="2" Grid.Row="7"  Margin="114,5,106,93"
             materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
             Style="{StaticResource MaterialDesignRaisedDarkButton}" 
-            Grid.ColumnSpan="2" Click="Button_Click">
+            Grid.ColumnSpan="3" Click="Button_Click">
             ДОБАВИТЬ
         </Button>
 

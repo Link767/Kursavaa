@@ -7,7 +7,16 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-    Title="Продукты добавление" Height="1024" Width="1440" Background="#669E85" Loaded="Window_Loaded">
+    Title="Продукты добавление" Height="355" Width="660" Loaded="Window_Loaded">
+    <Window.Icon>
+        <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
+    </Window.Icon>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF7D256F" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -25,24 +34,22 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="TBProName" Text="Имя продукта"
-                 Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0,90,0,0"
-                 Grid.ColumnSpan="4"/>
+        <TextBlock  Text="Имя продукта:"
+                 Grid.Row="2" Grid.Column="2" FontSize="20" 
+                   Grid.ColumnSpan="2" Foreground="White" Margin="0,38,0,2" Grid.RowSpan="2"/>
+        <TextBox x:Name="TBProName"  Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3"
+                 Margin="54,31,89,17" BorderBrush="#89FFFFFF" Grid.RowSpan="2"/>
 
-        <TextBox x:Name="TBCost"
-         Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0,90,0,0"  Text="Цена продукта"
-                 Grid.ColumnSpan="4"/>
+        <TextBlock
+         Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0,22,0,68"  Text="Цена продукта:"
+                 Grid.ColumnSpan="2" Foreground="White"/>
+        <TextBox x:Name="TBCost" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3"
+                 Margin="54,15,89,83" BorderBrush="#89FFFFFF"/>
 
-        <Button Grid.Column="3" Grid.Row="8"  Margin="124,50,124,50"
+        <Button Grid.Column="3" Grid.Row="4"  Margin="46,96,46,2"
          materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
          Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="AddKassa_Click" 
                 Grid.ColumnSpan="2">

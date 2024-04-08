@@ -7,7 +7,16 @@
         xmlns:local="clr-namespace:Kursavaa.WinFolder"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Личный кабинет" Height="1024" Width="1440" Background="#669E85">
+        Title="Личный кабинет" Height="1024" Width="960">
+    <Window.Icon>
+        <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
+    </Window.Icon>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF7D256F" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -59,12 +68,12 @@
                 Header="Руководство пользователя" Click="PolzovatelRuk" />
                 <MenuItem
                 Header="Информация о программе" Click="MenuItem_Click_1" />
-                
+
             </Menu>
         </materialDesign:Card>
 
-        <Calendar Grid.Row="4" Grid.Column="5"
+        <Calendar Grid.Row="4" Grid.Column="4"
                   materialDesign:CalendarAssist.Orientation="Horizontal" 
-                  Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="0,127,0,127" />
+                  Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0,127,0,127" />
     </Grid>
 </Window>

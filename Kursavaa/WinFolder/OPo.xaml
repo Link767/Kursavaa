@@ -7,7 +7,16 @@
         xmlns:local="clr-namespace:Kursavaa.WinFolder"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Информация о программе" Height="1024" Width="1440" Background="#669E85">
+        Title="Информация о программе" Height="826" Width="752">
+    <Window.Icon>
+        <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
+    </Window.Icon>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF7D256F" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -31,49 +40,32 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-
-        <Rectangle RadiusX="50" RadiusY="50"
-                   Grid.Row="4" Grid.Column="1"
-        Opacity="0.7" 
-        VerticalAlignment="Top" HorizontalAlignment="Left" 
-        Width="472" Height="780" 
-        Fill="#FC2847" Grid.ColumnSpan="3" Grid.RowSpan="7" Margin="234,2,0,0"/>
-
-        <Rectangle RadiusX="50" RadiusY="50"
-             Grid.Row="4" Grid.Column="4"
-             Opacity="0.7" 
-             VerticalAlignment="Center" HorizontalAlignment="Left" 
-             Width="463" Height="780" 
-             Fill="#FC2847" Grid.RowSpan="6" Grid.ColumnSpan="2" Margin="4,0,0,0"/>
-
-
-        <TextBlock Grid.Row="4" Grid.Column="2"
+        <TextBlock Grid.Row="4" Grid.Column="1"
             Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-            Text="О разработчике" Grid.ColumnSpan="2" Margin="77,30,133,50" />
+            Text="О разработчике" Grid.ColumnSpan="3" Margin="110,32,0,48" Foreground="White" />
 
         <TextBlock Grid.Row="4" Grid.Column="4"
             Style="{StaticResource MaterialDesignHeadline4TextBlock}"
-            Text="О программе" Margin="129,28,131,44" Grid.ColumnSpan="2" />
+            Text="О программе" Margin="86,28,58,44" Grid.ColumnSpan="3" Foreground="White" />
 
-        <TextBlock Grid.Row="8" Grid.Column="2"
+        <TextBlock Grid.Row="7" Grid.Column="1"
                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                   Grid.ColumnSpan="2" Margin="15,4,72,42" TextWrapping="Wrap">
+                   Grid.ColumnSpan="4" Margin="85,119,24,108" TextWrapping="Wrap" Foreground="White" Grid.RowSpan="3">
                    Каралис Алесандр Александрович
                    Учиник группы Д-03-3ИСП21
         </TextBlock>
 
-        <TextBlock Grid.Row="8" Grid.Column="2"
+        <TextBlock Grid.Row="8" Grid.Column="1"
                    Text="Номер: +7(985)-291-61-81" FontSize="20" 
                    
-                   Grid.ColumnSpan="2" Margin="39,66,186,28"/>
+                   Grid.ColumnSpan="4" Margin="109,48,69,46" Foreground="White"/>
 
         <TextBlock Grid.Row="5" Grid.Column="4"
                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                TextWrapping="WrapWithOverflow" Grid.ColumnSpan="2" Margin="122,0,115,0">
+                TextWrapping="WrapWithOverflow" Grid.ColumnSpan="3" Margin="31,0,1,0" Foreground="White">
             Программа для учета заказов ООО "Ваилдбириз"
             созданна учеником колледжа ГБПОУ ТК #34
             группы Д-0-3ИСП21 Каралисом А.А
@@ -81,12 +73,13 @@
 
         <Image Grid.Row="5"
                 Source="/Image/msg981036250-244963.jpg" 
-               Margin="176,6,235,4" Grid.ColumnSpan="4" Grid.RowSpan="3" Grid.Column="1"/>
+               Margin="1,6,1,4" Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Column="2"/>
 
         <Button Grid.Row="3" Grid.Column="1"
-    materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
-    Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
-            Вернуться в личный кабинет
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" 
+                Click="Button_Click" Margin="1,4,1,4">
+            Вернуться
         </Button>
 
     </Grid>

@@ -7,7 +7,16 @@
         xmlns:local="clr-namespace:Kursavaa.WinAddFolder"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Заказ добавление" Height="1024" Width="1440" Background="#669E85" Loaded="Window_Loaded">
+        Title="Заказ добавление" Height="655" Width="717" Loaded="Window_Loaded">
+    <Window.Icon>
+        <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
+    </Window.Icon>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="1"/>
+            <GradientStop Color="#FF7D256F" Offset="0"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -28,31 +37,31 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Column="1" Grid.Row="4" FontSize="20" Margin="0,92,0,0"
-                   Text="Название продукта"/>
-        <ComboBox x:Name="сdProdName" Grid.Column="2" Grid.Row="4" Margin="0,92,0,0"
-                 Text="Название продукта"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" FontSize="20" Margin="3,0,41,2"
+                   Text="Название продукта" Foreground="White" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="сdProdName" Grid.Column="3" Grid.Row="1" Margin="80,38,60,0"
+                 Text="Название продукта" BorderBrush="#89FFFFFF" Grid.ColumnSpan="3" 
+                  VerticalAlignment="Top" Grid.RowSpan="2"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="5" FontSize="20" Margin="0,92,0,0" Text="Фамиля Закащика"/>
-        <ComboBox x:Name="cbUserSurname" Grid.Column="2" Grid.Row="5" Margin="0,92,0,0"
-        Text="Фамилия закащика"/>
+        <TextBlock Grid.Column="2" Grid.Row="4" FontSize="20" Margin="1,50,45,42" Text="Фамиля Закащика" Foreground="White" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="cbUserSurname" Grid.Column="3" Grid.Row="4" Margin="76,51,64,0"
+        Text="Фамилия закащика" BorderBrush="#89FFFFFF" Grid.ColumnSpan="3" VerticalAlignment="Top"/>
 
-        <TextBlock Grid.Column="1" Grid.Row="6" FontSize="20" Margin="0,92,0,0" Text="Название точки"/>
-        <ComboBox x:Name="cbPoint" Grid.Column="2" Grid.Row="6" Margin="0,92,0,0"/>
-        
-        <TextBlock Grid.Column="1" Grid.Row="7" FontSize="20" Margin="0,92,0,0" Text="Статус заказа"/>
-        <ComboBox x:Name="cbStatus" Grid.Column="2" Grid.Row="7" Margin="0,92,0,0"/>
+        <TextBlock Grid.Column="2" Grid.Row="5" FontSize="20" Margin="1,50,65,42" Text="Название точки" Foreground="White" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="cbPoint" Grid.Column="3" Grid.Row="5" Margin="76,51,64,0" 
+                  BorderBrush="#89FFFFFF" Grid.ColumnSpan="3" VerticalAlignment="Top"/>
 
-        <Button Grid.Column="1" Grid.Row="10"  Margin="123,38,123,60"
+        <TextBlock Grid.Column="1" Grid.Row="6" FontSize="20" Margin="116,50,71,42" Text="Статус заказа" Foreground="White" Grid.ColumnSpan="3"/>
+        <ComboBox x:Name="cbStatus" Grid.Column="3" Grid.Row="6" Margin="76,51,64,0"
+                  BorderBrush="#89FFFFFF" Grid.ColumnSpan="3" VerticalAlignment="Top"/>
+
+        <Button Grid.Column="2" Grid.Row="7"  Margin="111,0,80,98"
         materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
         Style="{StaticResource MaterialDesignRaisedDarkButton}" 
-        Grid.ColumnSpan="2" Click="Button_Click">
+        Grid.ColumnSpan="3" Click="Button_Click">
             ДОБАВИТЬ
         </Button>
     </Grid>
