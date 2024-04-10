@@ -13,8 +13,11 @@
     </Window.Icon>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="1"/>
-            <GradientStop Color="#FF7D256F" Offset="0"/>
+            <GradientStop Color="#FF7D256F" Offset="1"/>
+            <GradientStop Color="#FF8D297F" Offset="0.65"/>
+            <GradientStop Color="#FFBC3D96" Offset="0.413"/>
+            <GradientStop Color="#FFEC238D" Offset="0"/>
+            <GradientStop Color="#FFD52E91" Offset="0.193"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
@@ -53,7 +56,7 @@
 
         <TextBlock Grid.Row="7" Grid.Column="1"
                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"
-                   Grid.ColumnSpan="4" Margin="85,119,24,108" TextWrapping="Wrap" Foreground="White" Grid.RowSpan="3">
+                   Grid.ColumnSpan="4" Margin="81,71,28,26" TextWrapping="Wrap" Foreground="White" Grid.RowSpan="2">
                    Каралис Алесандр Александрович
                    Учиник группы Д-03-3ИСП21
         </TextBlock>
@@ -61,7 +64,7 @@
         <TextBlock Grid.Row="8" Grid.Column="1"
                    Text="Номер: +7(985)-291-61-81" FontSize="20" 
                    
-                   Grid.ColumnSpan="4" Margin="109,48,69,46" Foreground="White"/>
+                   Grid.ColumnSpan="4" Margin="105,0,73,94" Foreground="White"/>
 
         <TextBlock Grid.Row="5" Grid.Column="4"
                    Style="{StaticResource MaterialDesignHeadline6TextBlock}"
@@ -71,9 +74,9 @@
             группы Д-0-3ИСП21 Каралисом А.А
         </TextBlock>
 
-        <Image Grid.Row="5"
+        <Image Grid.Row="4"
                 Source="/Image/msg981036250-244963.jpg" 
-               Margin="1,6,1,4" Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Column="2"/>
+               Margin="1,101,1,39" Grid.ColumnSpan="2" Grid.RowSpan="4" Grid.Column="2"/>
 
         <Button Grid.Row="3" Grid.Column="1"
                 materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"

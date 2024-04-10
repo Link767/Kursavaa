@@ -80,5 +80,18 @@ namespace Kursavaa.WinFolder
             staffAdd.Show();
             this.Close();
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e) {
+            MessageBoxResult result =
+                MessageBox.Show("Вы действительно желаете удалить?",
+                "Информация", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                classDG.DelitRowDB("Delete dbo.[Staff] " +
+                $"Where [IdStaff]='{classDG.SelectId()}'");
+                classDG.LoadDB("Select * From dbo.[ViewStaff]");
+            }
+        }
     }
 }

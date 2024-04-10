@@ -39,6 +39,7 @@ namespace Kursavaa.WinAddFolder
 
         private void AddKassa_Click(object sender, RoutedEventArgs e)
         {
+            //try {
             // Добавление Города
             sqlConnection.Open();
             sqlCommand = new SqlCommand("Insert into dbo.[Gity] " +
@@ -62,7 +63,6 @@ namespace Kursavaa.WinAddFolder
             
             sqlConnection.Close();
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
             // Добавление улицы
             sqlConnection.Open();
             sqlCommand = new SqlCommand("Insert into dbo.[Street] " +
@@ -82,11 +82,8 @@ namespace Kursavaa.WinAddFolder
             dataReader.Read();
             IdStreet = dataReader[0].ToString();
             dataReader.Close();
-
             sqlConnection.Close();
-
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            
             // Добавление Adresa
             sqlConnection.Open();
             sqlCommand = new SqlCommand("Insert into dbo.[Addres] " +
@@ -106,8 +103,14 @@ namespace Kursavaa.WinAddFolder
             dataReader.Read();
             IdAddres = dataReader[0].ToString();
             dataReader.Close();
-
-            sqlConnection.Close();
+            MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+            //}
+            //catch (Exception ex) {
+            //    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
+            //finally {
+            //    sqlConnection.Close();
+            //}
 
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         }

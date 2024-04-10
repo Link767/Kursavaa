@@ -13,8 +13,11 @@
     </Window.Icon>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="1"/>
-            <GradientStop Color="#FF7D256F" Offset="0"/>
+            <GradientStop Color="#FF7D256F" Offset="1"/>
+            <GradientStop Color="#FF8D297F" Offset="0.65"/>
+            <GradientStop Color="#FFBC3D96" Offset="0.413"/>
+            <GradientStop Color="#FFEC238D" Offset="0"/>
+            <GradientStop Color="#FFD52E91" Offset="0.193"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
@@ -63,12 +66,12 @@
                   Grid.ColumnSpan="2"/>
 
         <TextBlock FontSize="20" Grid.Column="2" Grid.Row="4" 
-                   Text="ИНН" Margin="139,93,14,0" Foreground="White"/>
+                   Text="ИНН" Margin="139,93,158,0" Foreground="White" Grid.ColumnSpan="2"/>
         <TextBox x:Name="TBENN"  Grid.Column="3" Grid.Row="4" 
                  Margin="157,94,80,129" BorderBrush="#89FFFFFF" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
         <TextBlock FontSize="20" Grid.Column="2" Grid.Row="5" 
-                   Text="Код подразделения" Margin="139,93,54,0" Foreground="White" Grid.ColumnSpan="2"/>
+                   Text="Код подразделения" Margin="139,93,32,0" Foreground="White" Grid.ColumnSpan="2"/>
         <TextBox x:Name="TBUnitCode" Grid.Column="3" Grid.Row="5"
                  Margin="157,93,80,0" BorderBrush="#89FFFFFF" Grid.ColumnSpan="2"/>
 
@@ -78,7 +81,7 @@
                   VerticalAlignment="Top" BorderBrush="#89FFFFFF" Grid.ColumnSpan="2"/>
 
         <TextBlock FontSize="20" Grid.Column="2" Grid.Row="7" 
-                   Text="Номер дома" Margin="139,93,185,0" Foreground="White" Grid.ColumnSpan="2"/>
+                   Text="Номер дома" Margin="139,93,103,0" Foreground="White" Grid.ColumnSpan="2"/>
         <TextBox x:Name="TBHousNum" Grid.Column="3" Grid.Row="7" 
                  Margin="157,93,80,0" FontSize="20" BorderBrush="#89FFFFFF" Grid.ColumnSpan="2"/>
 

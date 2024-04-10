@@ -7,14 +7,17 @@
         xmlns:local="clr-namespace:Kursavaa.WinFolder"
         mc:Ignorable="d"
        WindowStartupLocation="CenterScreen"
-       Title="Заказы" Height="828" Width="1071">
+       Title="Заказы" Height="828" Width="1189">
     <Window.Icon>
         <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
     </Window.Icon>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="1"/>
-            <GradientStop Color="#FF7D256F" Offset="0"/>
+            <GradientStop Color="#FF7D256F" Offset="1"/>
+            <GradientStop Color="#FF8D297F" Offset="0.65"/>
+            <GradientStop Color="#FFBC3D96" Offset="0.413"/>
+            <GradientStop Color="#FFEC238D" Offset="0"/>
+            <GradientStop Color="#FFD52E91" Offset="0.193"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
@@ -75,12 +78,6 @@
         <Button Grid.Column="6" Grid.Row="8" Margin="14,28,14,70"
         materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
         Style="{StaticResource MaterialDesignRaisedDarkButton}">
-            УДАЛИТЬ
-        </Button>
-
-        <Button Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="2" Margin="77,28,78,70"
-        materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
-        Style="{StaticResource MaterialDesignRaisedDarkButton}">
             ИЗМЕНИТЬ
         </Button>
 
@@ -102,6 +99,16 @@
             Binding="{Binding PointName}"/>
                 <DataGridTextColumn Header="Статус доставки"
             Binding="{Binding StatusName}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="BtnDelete"
+                                Content="Удалить"
+                                Background="#FF512DA8"
+                                Foreground="White" Click="BtnDelete_Click" Cursor=""/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

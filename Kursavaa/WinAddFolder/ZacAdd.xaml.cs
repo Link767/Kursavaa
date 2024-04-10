@@ -38,8 +38,7 @@ namespace Kursavaa.WinAddFolder
 
        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            try { 
-
+            try {
                 // Добавление Zac
                 sqlConnection.Open();
                 sqlCommand = new SqlCommand("Insert into dbo.[Zakaz] " +
@@ -54,7 +53,7 @@ namespace Kursavaa.WinAddFolder
             
                     sqlCommand.ExecuteNonQuery();
 
-                MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Добавление заказ прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 Zac zac = new Zac();
                 zac.Show();
@@ -62,15 +61,13 @@ namespace Kursavaa.WinAddFolder
 
             }
 
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            finally
-            {
+            finally {
                 sqlConnection.Close();
             }
-        }
+       }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

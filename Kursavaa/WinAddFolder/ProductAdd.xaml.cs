@@ -64,7 +64,7 @@ namespace Kursavaa.WinAddFolder
                 IdProdukt = dataReader[0].ToString();
                 dataReader.Close();
 
-                MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Добавление продукта прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
 
                 product.Show();
                 this.Close();

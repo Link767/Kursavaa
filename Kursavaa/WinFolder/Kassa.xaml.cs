@@ -84,5 +84,21 @@ namespace Kursavaa.WinFolder
         {
             
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                MessageBoxResult result =
+                MessageBox.Show("Вы действительно желаете удалить?",
+                "Информация", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+                if (result == MessageBoxResult.Yes)
+                {
+                    classDG.DelitRowDB("Delete dbo.[Kassa] " +
+                    $"Where [IdKassa]='{classDG.SelectId()}'");
+                    classDG.LoadDB("Select * From dbo.[ViewKassa]");
+                }
+            }
+        }
     }
 }

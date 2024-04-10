@@ -18,70 +18,56 @@ namespace Kursavaa.Class
         DataTable dataTable;
         SqlCommand SqlCommand;
 
-        public ClassDG(DataGrid dataGrid)
-        {
+        public ClassDG(DataGrid dataGrid) {
             this.dataGrid = dataGrid;
         }
 
-        public void LoadDB(string sqlCommand)
-        {
-            try
-            {
+        public void LoadDB(string sqlCommand) {
+            try {
                 sqlConnection.Open();
                 dataAdapter = new SqlDataAdapter(sqlCommand, sqlConnection);
                 dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 dataGrid.ItemsSource = dataTable.DefaultView;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            finally
-            {
+            finally {
                 sqlConnection.Close();
             }
         }
 
-        public string SelectId()
-        {
+        public string SelectId() {
             object[] mass = null;
             string id = "";
-            try
-            {
-                if (dataGrid != null)
-                {
+            try {
+                if (dataGrid != null) {
                     DataRowView dataRowView = dataGrid.SelectedItem
                         as DataRowView;
-                    if (dataRowView != null)
-                    {
+                    if (dataRowView != null) {
                         DataRow dataRow = (DataRow)dataRowView.Row;
                         mass = dataRow.ItemArray;
                     }
                 }
                 id = mass[0].ToString();
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show("Ошибка", ex.Message, MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return id;
         }
 
-        public void DelitRowDB(string SqlCommandDelite)
-        {
-            try
-            {
+        public void DelitRowDB(string SqlCommandDelite) {
+            try {
                 sqlConnection.Open();
                 SqlCommand = new SqlCommand(SqlCommandDelite, sqlConnection);
                 SqlCommand.ExecuteNonQuery();
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show(ex.Message, "ошибка", MessageBoxButton.OK);
             }
-            finally
-            {
+            finally {
                 sqlConnection.Close();
             }
         }

@@ -81,5 +81,17 @@ namespace Kursavaa.WinFolder
             zacAdd.Show();
             this.Close();
         }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Вы действительно желаете удалить?", "Информация", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                classDG.DelitRowDB("Delete dbo.[Zakaz] " +
+                $"Where [IdZakaz]='{classDG.SelectId()}'");
+                classDG.LoadDB("Select * From dbo.[ViewProduct]");
+            }
+        }
     }
 }

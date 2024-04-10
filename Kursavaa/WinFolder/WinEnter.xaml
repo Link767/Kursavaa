@@ -13,8 +13,11 @@
     </Window.Icon>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-            <GradientStop Color="Black" Offset="1"/>
-            <GradientStop Color="#FF7D256F" Offset="0"/>
+            <GradientStop Color="#FF7D256F" Offset="1"/>
+            <GradientStop Color="#FF8D297F" Offset="0.65"/>
+            <GradientStop Color="#FFBC3D96" Offset="0.413"/>
+            <GradientStop Color="#FFEC238D" Offset="0"/>
+            <GradientStop Color="#FFD52E91" Offset="0.193"/>
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
@@ -70,7 +73,7 @@
          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, 
          AncestorType=Window}}"
          Style="{StaticResource MaterialDesignOutlinedButton}" Click="Button_Click_1" 
-         Cursor="Hand" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" />
+         Cursor="Hand" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="White" />
 
         <TextBox Grid.Column="3" HorizontalAlignment="Left" Foreground="White"
              Margin="23,8,0,0" Grid.Row="4" TextWrapping="Wrap" 
