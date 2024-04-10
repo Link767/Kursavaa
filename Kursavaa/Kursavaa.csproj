@@ -100,9 +100,6 @@
     <Compile Include="WinAddFolder\ZacAdd.xaml.cs">
       <DependentUpon>ZacAdd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WinDell\ProductDel.xaml.cs">
-      <DependentUpon>ProductDel.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WinFolder\Kassa.xaml.cs">
       <DependentUpon>Kassa.xaml</DependentUpon>
     </Compile>
@@ -141,10 +138,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinAddFolder\ZacAdd.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WinDell\ProductDel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
