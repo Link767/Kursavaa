@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using Kursavaa.WinAddFolder;
-using Kursavaa.WinDell;
 
 namespace Kursavaa.WinFolder
 {
