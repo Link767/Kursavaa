@@ -96,12 +96,6 @@
                     Binding="{Binding Number}"/>
                 <DataGridTextColumn Header="Пол"
                     Binding="{Binding GenderName}"/>
-                <DataGridTextColumn Header="День рождения"
-                    Binding="{Binding Day}"/>
-                <DataGridTextColumn Header="Месяц рождения"
-                    Binding="{Binding MonthName}"/>
-                <DataGridTextColumn Header="Год рождения"
-                    Binding="{Binding YearName}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

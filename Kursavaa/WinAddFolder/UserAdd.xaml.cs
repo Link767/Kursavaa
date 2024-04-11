@@ -16,6 +16,7 @@ using Kursavaa.Class;
 using Kursavaa.WinFolder;
 using System.Data;
 using System.Net;
+using Microsoft.Build.Tasks.Deployment.Bootstrapper;
 
 namespace Kursavaa.WinAddFolder
 {
@@ -26,9 +27,6 @@ namespace Kursavaa.WinAddFolder
         SqlDataReader dataReader; SqlCommand sqlCommand;
         ClassCB classCB;
         Users users;
-
-        public static string IdYear {get; set;}
-        public static string IdBirthday { get; set; }
         public static string IdUser { get; set;}
         public UserAdd()
         {
@@ -40,99 +38,34 @@ namespace Kursavaa.WinAddFolder
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // Добавление Года
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Insert into dbo.[Year] " +
-            "(YearName) " +
-            "Values " +
-            "(@YearName)", sqlConnection);
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("Insert into dbo.[User] " +
+                    "(Name, Surname, LastName, Number, IdGender) " +
+                    "Values " +
+                    "(@Name, @Surname, @LastName, @Number, @IdGender)", sqlConnection);
 
-            sqlCommand.Parameters.AddWithValue("YearName", TBYear.Text);
-            sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
+                sqlCommand.Parameters.AddWithValue("Name", TBName.Text);
+                sqlCommand.Parameters.AddWithValue("Surname", TBSurname.Text);
+                sqlCommand.Parameters.AddWithValue("LastName", TBLastName.Text);
+                sqlCommand.Parameters.AddWithValue("Number", Num.Text);
+                sqlCommand.Parameters.AddWithValue("IdGender", cdGender.SelectedValue.ToString());
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Добавление клиента прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                users.Show();
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
 
-            //получение Года
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Select IdYear from dbo.Year " +
-               $"where YearName = {TBYear.Text}", sqlConnection);
-           
 
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdYear = dataReader[0].ToString();
-            dataReader.Close();
-            sqlConnection.Close();
-
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            // Добавление Дня
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Insert into dbo.[Birthday] " +
-                "(Day, IdMonth) " +
-                "Values " +
-                "(@Day, " +
-            "@IdMonth)", sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("Day", Day.Text);
-            sqlCommand.Parameters.AddWithValue("IdMonth", cdMonth.SelectedValue.ToString());
-            sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-
-            //получение Дня
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Select IdBirthday from dbo.Birthday " +
-               $"where Day = {Day.Text}", sqlConnection);
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdBirthday = dataReader[0].ToString();
-            dataReader.Close();
-            sqlConnection.Close();
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            // Добавление User
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Insert into dbo.[User] " +
-                "(Name, Surname, LastName, Number, IdGender, IdBirthday) " +
-                "Values " +
-                "(@Name, @Surname, @LastName, @Number, @IdGender, @IdBirthday)", sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("Name", TBName.Text);
-            sqlCommand.Parameters.AddWithValue("Surname", TBSurname.Text);
-            sqlCommand.Parameters.AddWithValue("LastName", TBLastName.Text);
-            sqlCommand.Parameters.AddWithValue("Number", Num.Text);
-            sqlCommand.Parameters.AddWithValue("Day", Day.Text);
-            sqlCommand.Parameters.AddWithValue("IdGender", cdGender.SelectedValue.ToString());
-            sqlCommand.Parameters.AddWithValue("IdBirthday", cdMonth.SelectedValue.ToString());
-            sqlCommand.ExecuteNonQuery();
-            sqlConnection.Close();
-
-            //получение User
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
-               $"where Name = {TBName.Text}", sqlConnection);
-            sqlConnection.Close();
-
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
-               $"where Surname = {TBSurname.Text}", sqlConnection);
-            sqlConnection.Close();
-
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
-               $"where LastName = {TBLastName.Text}", sqlConnection);
-            sqlConnection.Close();
-
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Select IdUser from dbo.User " +
-               $"where Number = {Num.Text}", sqlConnection);
-
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdUser = dataReader[0].ToString();
-            dataReader.Close();
-            sqlConnection.Close();
 
 
 
@@ -141,7 +74,6 @@ namespace Kursavaa.WinAddFolder
         private void UserAdd_loaded(object sender, RoutedEventArgs e)
         {
             classCB.LoadGender(cdGender);
-            classCB.LoadMonth(cdMonth);
         }
 
         private void Click(object sender, RoutedEventArgs e)

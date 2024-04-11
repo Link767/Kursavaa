@@ -73,7 +73,8 @@
          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, 
          AncestorType=Window}}"
          Style="{StaticResource MaterialDesignOutlinedButton}" Click="Button_Click_1" 
-         Cursor="Hand" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" Background="White" />
+         Cursor="Hand" Grid.Column="3" Grid.Row="4" Grid.RowSpan="2" Grid.ColumnSpan="2" 
+         Background="White" />
 
         <TextBox Grid.Column="3" HorizontalAlignment="Left" Foreground="White"
              Margin="23,8,0,0" Grid.Row="4" TextWrapping="Wrap" 

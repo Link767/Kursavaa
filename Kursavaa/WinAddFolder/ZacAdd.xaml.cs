@@ -22,8 +22,10 @@ namespace Kursavaa.WinAddFolder
     public partial class ZacAdd : Window
     {
         SqlConnection sqlConnection = new SqlConnection(App.ConnectionString());
-        SqlDataAdapter dataAdapter; DataTable dataTable;
-        SqlDataReader dataReader; SqlCommand sqlCommand;
+        SqlDataAdapter dataAdapter; 
+        DataTable dataTable;
+        SqlDataReader dataReader;
+        SqlCommand sqlCommand;
         ClassCB classCB;
         Zac zac;
 
