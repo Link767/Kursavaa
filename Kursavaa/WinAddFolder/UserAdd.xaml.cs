@@ -35,7 +35,6 @@ namespace Kursavaa.WinAddFolder
             users = new Users();
            
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -64,11 +63,6 @@ namespace Kursavaa.WinAddFolder
             {
                 sqlConnection.Close();
             }
-
-
-
-
-
         }
 
         private void UserAdd_loaded(object sender, RoutedEventArgs e)
