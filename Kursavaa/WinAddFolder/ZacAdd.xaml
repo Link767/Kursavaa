@@ -67,5 +67,11 @@
         Grid.ColumnSpan="3" Click="Button_Click">
             ДОБАВИТЬ
         </Button>
+
+        <Button Grid.Column="1" Grid.Row="1"  Margin="0,4,20,4"
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Click">
+            НАЗАД
+        </Button>
     </Grid>
 </Window>

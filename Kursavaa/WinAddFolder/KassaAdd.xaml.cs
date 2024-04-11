@@ -87,5 +87,12 @@ namespace Kursavaa.WinAddFolder
             classCB.LoadStreet(cdStreet);
             classCB.LoadFOI(cdStaff);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Kassa kassa = new Kassa();
+            kassa.Show();
+            Close();
+        }
     }
 }

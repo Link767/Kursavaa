@@ -76,5 +76,12 @@ namespace Kursavaa.WinAddFolder
             classCB.LoadProduktName(сdProdName);
             classCB.LoadUserSurname(cbUserSurname);
         }
+
+        private void Click(object sender, RoutedEventArgs e)
+        {
+            Zac zac = new Zac();
+            zac.Show();
+            Close();
+        }
     }
 }

@@ -121,5 +121,12 @@ namespace Kursavaa.WinAddFolder
             classCB.LoadMaritalStatus(cdMaritalStatus);
             classCB.LoadContry(cbContry);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Staff staff = new Staff();
+            staff.Show();
+            Close();
+        }
     }
 }

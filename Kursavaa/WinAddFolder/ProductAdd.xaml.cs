@@ -84,5 +84,12 @@ namespace Kursavaa.WinAddFolder
         {
            
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Product product = new Product();
+            product.Show();
+            Close();
+        }
     }
 }

@@ -143,5 +143,12 @@ namespace Kursavaa.WinAddFolder
             classCB.LoadGender(cdGender);
             classCB.LoadMonth(cdMonth);
         }
+
+        private void Click(object sender, RoutedEventArgs e)
+        {
+            Users users = new Users();
+            users.Show();
+            Close();
+        }
     }
 }
