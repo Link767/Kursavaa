@@ -40,9 +40,6 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
@@ -73,11 +70,11 @@
         <TextBox x:Name="Num" Grid.Column="1" Grid.Row="6" 
                  Margin="110,50,141,42" Grid.ColumnSpan="3" BorderBrush="#89FFFFFF"/>
 
-        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="6" 
-                   Text="Пол" Margin="92,49,136,43" 
-                   Foreground="White" Grid.ColumnSpan="2"/>
-        <ComboBox Name="cdGender" Grid.Column="4" Grid.Row="6" 
-                  Margin="19,0,99,0" Grid.ColumnSpan="2" BorderBrush="#89FFFFFF"/>
+        <TextBlock FontSize="20" Grid.Column="3" Grid.Row="3" 
+                   Text="Пол" Margin="46,1,38,1" 
+                   Foreground="White"/>
+        <ComboBox Name="cdGender" Grid.Column="3" Grid.Row="3" 
+                  Margin="117,5,1,0" Grid.ColumnSpan="2" BorderBrush="#89FFFFFF" VerticalAlignment="Top"/>
 
         <Button Grid.Column="2" Grid.Row="7"  Margin="114,5,106,93"
             materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
