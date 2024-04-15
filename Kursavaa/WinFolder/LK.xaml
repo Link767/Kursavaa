@@ -71,7 +71,7 @@
             </Menu>
         </materialDesign:Card>
 
-        <Calendar Grid.Row="4" Grid.Column="4"
+        <Calendar Grid.Row="4" Grid.Column="4" 
                   materialDesign:CalendarAssist.Orientation="Horizontal" 
                   Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0,127,0,7" />
     </Grid>
