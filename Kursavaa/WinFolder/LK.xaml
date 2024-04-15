@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Kursavaa.WinFolder"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Личный кабинет" Height="1024" Width="960">
+        Title="Личный кабинет" Height="592" Width="960">
     <Window.Icon>
         <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
     </Window.Icon>
@@ -37,10 +37,6 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
@@ -77,6 +73,6 @@
 
         <Calendar Grid.Row="4" Grid.Column="4"
                   materialDesign:CalendarAssist.Orientation="Horizontal" 
-                  Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0,127,0,127" />
+                  Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0,127,0,7" />
     </Grid>
 </Window>
