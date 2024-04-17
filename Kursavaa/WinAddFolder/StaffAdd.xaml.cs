@@ -16,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Net;
+using System.Xml.Linq;
 
 namespace Kursavaa.WinAddFolder
 {
@@ -29,9 +30,6 @@ namespace Kursavaa.WinAddFolder
         ClassCB classCB;
         Staff staff;
 
-        public static string IdCity {  get; set; }
-        public static string IdStreet { get; set; }
-        public static string IdAddres { get; set; }
         public StaffAdd()
         {
             InitializeComponent();
@@ -41,87 +39,38 @@ namespace Kursavaa.WinAddFolder
 
         private void AddKassa_Click(object sender, RoutedEventArgs e)
         {
-            //try {
-            // Добавление Города
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Insert into dbo.[Gity] " +
-                "(GityName, IdContry) " +
-                "Values " +
-                "(@GityName, " +
-            "@IdContry)", sqlConnection);
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand = new SqlCommand("Insert into dbo.[Staff] " +
+                    "(Name, Surname, LastName, IdGender, IdMaritalStatus) " +
+                    "Values " +
+                    "(@Name, @Surname, @LastName, @IdGender, @IdMaritalStatus)", sqlConnection);
 
-            sqlCommand.Parameters.AddWithValue("GityName", TBCity.Text);
-            sqlCommand.Parameters.AddWithValue("IdContry", cbContry.SelectedValue.ToString());
-            sqlCommand.ExecuteNonQuery();
-
-            //получение Города
-            sqlCommand = new SqlCommand("Select IdGity from dbo.Gity " +
-               $"where GityName = {TBCity.Text}", sqlConnection);
-
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdCity = dataReader[0].ToString();
-            dataReader.Close();
-            
-            sqlConnection.Close();
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // Добавление улицы
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Insert into dbo.[Street] " +
-                "(StreetName, IdGity) " +
-                "Values " +
-                "(@StreetName, " +
-            "@IdGity)", sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("StreetName", TBStreet.Text);
-            sqlCommand.ExecuteNonQuery();
-
-            //получение улицы
-            sqlCommand = new SqlCommand("Select IdStreet from dbo.Street " +
-               $"where StreetName = {TBStreet.Text}", sqlConnection);
-
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdStreet = dataReader[0].ToString();
-            dataReader.Close();
-            sqlConnection.Close();
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            // Добавление Adresa
-            sqlConnection.Open();
-            sqlCommand = new SqlCommand("Insert into dbo.[Addres] " +
-                "(HousNumber, IdStreet) " +
-                "Values " +
-                "(@HousNumber, " +
-            "@IdStreet)", sqlConnection);
-
-            sqlCommand.Parameters.AddWithValue("HousNumber", TBHousNum.Text);
-            sqlCommand.ExecuteNonQuery();
-
-            //получение Adres
-            sqlCommand = new SqlCommand("Select IdAddres from dbo.Addres " +
-               $"where HousNumber = {TBHousNum.Text}", sqlConnection);
-
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            IdAddres = dataReader[0].ToString();
-            dataReader.Close();
-            MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
-            //}
-            //catch (Exception ex) {
-            //    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
-            //finally {
-            //    sqlConnection.Close();
-            //}
-
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                sqlCommand.Parameters.AddWithValue("Name", Name.Text);
+                sqlCommand.Parameters.AddWithValue("Surname", TBSurname.Text);
+                sqlCommand.Parameters.AddWithValue("LastName", TBLastName.Text);
+                sqlCommand.Parameters.AddWithValue("IdGender", cdGender.SelectedValue.ToString());
+                sqlCommand.Parameters.AddWithValue("IdMaritalStatus", cdMaritalStatus.SelectedValue.ToString());
+                sqlCommand.ExecuteNonQuery();
+                MessageBox.Show("Добавление клиента прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                staff.Show();
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            classCB.LoadGender(cbGender);
+            classCB.LoadGender(cdGender);
             classCB.LoadMaritalStatus(cdMaritalStatus);
-            classCB.LoadContry(cbContry);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

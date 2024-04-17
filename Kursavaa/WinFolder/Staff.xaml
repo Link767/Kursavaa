@@ -92,8 +92,6 @@
                     Binding="{Binding Surname}"/>
                 <DataGridTextColumn Header="Отчество работника"
                     Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="ИНН"
-                    Binding="{Binding ENNNum}"/>
                 <DataGridTextColumn Header="Пол"
                     Binding="{Binding GenderName}"/>
                 <DataGridTextColumn Header="Семейное положение"
