@@ -87,6 +87,9 @@
     <Compile Include="Class\ClassCB.cs" />
     <Compile Include="Class\ClassDG.cs" />
     <Compile Include="Class\ClassMB.cs" />
+    <Compile Include="WinAddFolder\AdressAdd.xaml.cs">
+      <DependentUpon>AdressAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinAddFolder\KassaAdd.xaml.cs">
       <DependentUpon>KassaAdd.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,10 @@
     <Compile Include="WinRedFollder\ZacRedStatus.xaml.cs">
       <DependentUpon>ZacRedStatus.xaml</DependentUpon>
     </Compile>
+    <Page Include="WinAddFolder\AdressAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinAddFolder\KassaAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

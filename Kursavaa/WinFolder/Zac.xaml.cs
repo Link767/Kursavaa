@@ -28,13 +28,6 @@ namespace Kursavaa.WinFolder
             classDG = new Class.ClassDG(DgZack);
         }
 
-        private void lk(object sender, RoutedEventArgs e)
-        {
-            LK lK = new LK();
-            lK.Show();
-            this.Close();
-        }
-
         private void Prod(object sender, RoutedEventArgs e)
         {
             Product product = new Product();

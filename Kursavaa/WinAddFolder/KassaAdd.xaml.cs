@@ -94,5 +94,12 @@ namespace Kursavaa.WinAddFolder
             kassa.Show();
             Close();
         }
+
+        private void AddAdress_Click(object sender, RoutedEventArgs e)
+        {
+            AdressAdd adressAdd = new AdressAdd();
+            adressAdd.Show();
+            Close();
+        }
     }
 }

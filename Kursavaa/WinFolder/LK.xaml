@@ -67,6 +67,8 @@
                 Header="Руководство пользователя" />
                 <MenuItem
                 Header="Информация о программе" Click="MenuItem_Click_1" />
+                <MenuItem
+                Header="Сменить пользователя" Click="SckipUser" />
             </Menu>
 
         </materialDesign:Card>

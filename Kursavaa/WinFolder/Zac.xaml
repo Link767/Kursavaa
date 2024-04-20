@@ -51,8 +51,6 @@
                 <MenuItem
         Header="Таблицы">
                     <MenuItem
-        Header="ЛИЧНЫЙ КАБИНЕТ" Click="lk"/>
-                    <MenuItem
         Header="ПРОДУКТЫ" Click="Prod"/>
                     <MenuItem
         Header="СОТРУДНИКИ" Click="Staf"/>

@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Kursavaa.WinFolder
 {
-    /// <summary>
-    /// Логика взаимодействия для Product.xaml
-    /// </summary>
     public partial class Product : Window
     {
         Class.ClassDG classDG;
@@ -25,13 +22,6 @@ namespace Kursavaa.WinFolder
         {
             InitializeComponent();
             classDG = new Class.ClassDG(DgProduct);
-        }
-
-        private void lk(object sender, RoutedEventArgs e)
-        {
-            LK lK = new LK();
-            lK.Show();
-            this.Close();
         }
 
         private void Zac(object sender, RoutedEventArgs e)

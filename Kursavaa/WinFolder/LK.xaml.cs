@@ -76,5 +76,12 @@ namespace Kursavaa.WinFolder
         {
             MessageBox.Show("Если вы хотите сбросить пароль позвоните по номеру 8(999)000-00-00 обратитесь к администратору ");
         }
+
+        private void SckipUser(object sender, RoutedEventArgs e)
+        {
+            WinEnter winEnter = new WinEnter();
+            winEnter.Show();
+            this.Close();
+        }
     }
 }
