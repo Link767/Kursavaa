@@ -18,14 +18,11 @@ namespace Kursavaa.WinFolder
 {   
     public partial class LK : Window
     {
-        SqlConnection sqlConnection = new SqlConnection(App.ConnectionString());
-        SqlDataReader dataReader;
-        SqlCommand sqlCommand;
         Class.ClassDG classDG;
-        
         public LK()
         {
             InitializeComponent();
+            classDG = new Class.ClassDG(DGLK);
         }
 
         private void Prod(object sender, RoutedEventArgs e)
@@ -72,14 +69,12 @@ namespace Kursavaa.WinFolder
 
         private void DGLK_Loaded(object sender, RoutedEventArgs e)
         {
-            sqlConnection.Open();
             classDG.LoadDB("Select * from ViewAcc");
-            dataReader = sqlCommand.ExecuteReader();
-            dataReader.Read();
-            Login.Text = dataReader["Login"].ToString();;
-            Pass.Text = dataReader["Password"].ToString();
-            dataReader.Close();
-            sqlConnection.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Если вы хотите сбросить пароль позвоните по номеру 8(999)000-00-00 обратитесь к администратору ");
         }
     }
 }

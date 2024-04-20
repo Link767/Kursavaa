@@ -68,15 +68,30 @@
                 <MenuItem
                 Header="Информация о программе" Click="MenuItem_Click_1" />
             </Menu>
+
         </materialDesign:Card>
-
-        <TextBlock x:Name="Login" Grid.Column="1" Margin="13,38,17,24" Grid.Row="6"/>
-        <TextBlock x:Name="Pass" Grid.Column="2" Margin="12,44,17,20" Grid.Row="6"/>
-        <Image Source="\Image\kindpng_785904.png" Grid.Column="1" Grid.Row="5"/>
+        <Image Source="\Image\kindpng_785904.png" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,100,156,30" Grid.RowSpan="2"/>
         <Image Source="\Image\jhppw541ylej3olo5xcat2ro329dypww.png" Grid.Column="1" Grid.Row="1"/>
-
-            <Calendar Grid.Row="4" Grid.Column="4" 
+        <Calendar Grid.Row="4" Grid.Column="4" 
                   materialDesign:CalendarAssist.Orientation="Horizontal" 
-                  Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0,127,0,7" />
+                  Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0,127,0,7"/>
+
+        <DataGrid x:Name="DGLK" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" 
+                  Margin="0,0,27,2"
+                   AutoGenerateColumns="False" Loaded="DGLK_Loaded">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Логин"
+                    Binding="{Binding Login}"/>
+                <DataGridTextColumn Header="Пароль"
+                    Binding="{Binding Password}"/>
+                <DataGridTextColumn Header="Должность"
+                    Binding="{Binding RoleName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Column="3" Grid.Row="6"  Margin="1,98,27,0"
+                materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
+            Сброс пароля
+        </Button>
     </Grid>
 </Window>

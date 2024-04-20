@@ -93,5 +93,10 @@ namespace Kursavaa.WinFolder
                 classDG.LoadDB("Select * From dbo.[ViewProduct]");
             }
         }
+
+        private void Red_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
