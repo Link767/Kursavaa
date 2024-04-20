@@ -69,7 +69,10 @@ namespace Kursavaa.WinAddFolder
                 sqlCommand.Parameters.AddWithValue("IdStaff", cdStaff.SelectedValue.ToString());
                 sqlCommand.ExecuteNonQuery();
 
-                MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Добавление кассы прошло успешно", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                Kassa kassa = new Kassa();
+                kassa.Show();
+                Close();
             }
             catch (Exception ex)
             {
