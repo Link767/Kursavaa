@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Kursavaa.Class;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +15,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace Kursavaa.WinFolder
-{
+{   
     public partial class LK : Window
     {
+        SqlConnection sqlConnection = new SqlConnection(App.ConnectionString());
+        SqlDataReader dataReader;
+        SqlCommand sqlCommand;
+        Class.ClassDG classDG;
+        
         public LK()
         {
             InitializeComponent();
@@ -56,11 +63,6 @@ namespace Kursavaa.WinFolder
             this.Close();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Программу создал ученик группы:\n Д-03-3ИСП21\nКаралис Александр Александрович.");
-        }
-
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
             OPo oPo = new OPo();
@@ -68,9 +70,16 @@ namespace Kursavaa.WinFolder
             this.Close();
         }
 
-        private void PolzovatelRuk(object sender, RoutedEventArgs e)
+        private void DGLK_Loaded(object sender, RoutedEventArgs e)
         {
-
+            sqlConnection.Open();
+            classDG.LoadDB("Select * from ViewAcc");
+            dataReader = sqlCommand.ExecuteReader();
+            dataReader.Read();
+            Login.Text = dataReader["Login"].ToString();;
+            Pass.Text = dataReader["Password"].ToString();
+            dataReader.Close();
+            sqlConnection.Close();
         }
     }
 }

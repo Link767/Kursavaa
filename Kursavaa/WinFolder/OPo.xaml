@@ -42,7 +42,6 @@
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
             <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
 
@@ -84,6 +83,6 @@
                 Click="Button_Click" Margin="1,4,1,4">
             Вернуться
         </Button>
-
+        <Image Source="\Image\jhppw541ylej3olo5xcat2ro329dypww.png" Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </Window>

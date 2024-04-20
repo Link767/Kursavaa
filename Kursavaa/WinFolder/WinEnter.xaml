@@ -82,5 +82,6 @@
 
         <PasswordBox x:Name="pbPassword" Grid.Column="3" HorizontalAlignment="Left" Grid.Row="4" VerticalAlignment="Center" 
              Width="148" BorderBrush="#89FFFFFF" Grid.ColumnSpan="2" Margin="23,0,0,0"/>
+        <Image Source="\Image\jhppw541ylej3olo5xcat2ro329dypww.png" Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </Window>

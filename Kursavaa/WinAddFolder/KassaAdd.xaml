@@ -47,7 +47,7 @@
             ДОБАВИТЬ
         </Button>
         
-        <Button Grid.Column="1" Grid.Row="1"  Margin="0,4,20,4"
+        <Button Grid.Column="1" Grid.Row="5"  Margin="9,22,11,-44"
          materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
          Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
             НАЗАД
@@ -80,6 +80,6 @@
         <TextBox x:Name="TbHouseNumber"
                  Grid.Column="3" Grid.Row="2" Margin="50,2,97,15"
                  Foreground="White" Grid.ColumnSpan="3" BorderBrush="#89FFFFFF"/>
-
+        <Image Source="\Image\jhppw541ylej3olo5xcat2ro329dypww.png" Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </Window>

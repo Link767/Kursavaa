@@ -64,14 +64,18 @@
                     Header="КЛИЕНТЫ" Click="User"/>
                 </MenuItem>
                 <MenuItem
-                Header="Руководство пользователя" Click="PolzovatelRuk" />
+                Header="Руководство пользователя" />
                 <MenuItem
                 Header="Информация о программе" Click="MenuItem_Click_1" />
-
             </Menu>
         </materialDesign:Card>
 
-        <Calendar Grid.Row="4" Grid.Column="4" 
+        <TextBlock x:Name="Login" Grid.Column="1" Margin="13,38,17,24" Grid.Row="6"/>
+        <TextBlock x:Name="Pass" Grid.Column="2" Margin="12,44,17,20" Grid.Row="6"/>
+        <Image Source="\Image\kindpng_785904.png" Grid.Column="1" Grid.Row="5"/>
+        <Image Source="\Image\jhppw541ylej3olo5xcat2ro329dypww.png" Grid.Column="1" Grid.Row="1"/>
+
+            <Calendar Grid.Row="4" Grid.Column="4" 
                   materialDesign:CalendarAssist.Orientation="Horizontal" 
                   Grid.ColumnSpan="3" Grid.RowSpan="4" Margin="0,127,0,7" />
     </Grid>
