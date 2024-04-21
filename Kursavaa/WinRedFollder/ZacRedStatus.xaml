@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kursavaa.WinRedFollder"
         mc:Ignorable="d"
-        Title="ZacRedStatus" Height="450" Width="800">
+        Title="ZacRedStatus" Height="239" Width="342">
     <Window.Icon>
         <BitmapImage UriSource="/Image/jhppw541ylej3olo5xcat2ro329dypww.png"/>
     </Window.Icon>
@@ -34,11 +34,8 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="130"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
     </Grid>

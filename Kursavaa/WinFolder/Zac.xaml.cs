@@ -1,5 +1,6 @@
 ﻿using Kursavaa.Class;
 using Kursavaa.WinAddFolder;
+using Kursavaa.WinRedFollder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -87,9 +88,10 @@ namespace Kursavaa.WinFolder
             }
         }
 
-        private void Red_Click(object sender, RoutedEventArgs e)
+        private void BtnRed_Click(object sender, RoutedEventArgs e)
         {
-
+            ZacRedStatus zacRed = new ZacRedStatus();
+            zacRed.Show();
         }
     }
 }

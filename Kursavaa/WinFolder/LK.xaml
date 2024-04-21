@@ -90,7 +90,7 @@
                     Binding="{Binding RoleName}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Grid.Column="3" Grid.Row="6"  Margin="1,98,27,0"
+        <Button Grid.Column="3" Grid.Row="6"  Margin="0,98,27,0"
                 materialDesign:ShadowAssist.ShadowAnimationDuration="0:0:0.5"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Button_Click">
             Сброс пароля
