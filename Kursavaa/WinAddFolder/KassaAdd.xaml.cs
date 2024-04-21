@@ -98,11 +98,16 @@ namespace Kursavaa.WinAddFolder
             Close();
         }
 
-        private void AddAdress_Click(object sender, RoutedEventArgs e)
+        private void AddCity_Click(object sender, RoutedEventArgs e)
         {
-            AdressAdd adressAdd = new AdressAdd();
-            adressAdd.Show();
-            Close();
+            AddCity addCity = new AddCity();
+            addCity.Show();
+        }
+
+        private void AddStreet_click(object sender, RoutedEventArgs e)
+        {
+            AddStreet addStreet = new AddStreet();
+            addStreet.Show();
         }
     }
 }
