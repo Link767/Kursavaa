@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Kursavaa.WinAddFolder"
+        WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Title="AddStreet" Height="215" Width="334" Loaded="Window_Loaded">
     <Window.Icon>
